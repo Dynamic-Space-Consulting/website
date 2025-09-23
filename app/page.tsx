@@ -56,7 +56,7 @@ export default function ComingSoon() {
 
           {/* Description */}
           <p className="text-lg md:text-xl text-foreground/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-            We're working hard to bring you an incredible experience. 
+            We&apos;re working hard to bring you an incredible experience.
             Stay tuned for something that will change the way you think about consulting.
           </p>
 
