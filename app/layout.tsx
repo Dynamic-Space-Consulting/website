@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "./components/Footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Dynamic Space Consulting",
@@ -14,11 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`font-inter antialiased max-w-[90rem] mx-auto bg-white`}
-      >
+      <body className={`font-inter antialiased max-w-[90rem] mx-auto bg-white`}>
         {children}
-
+        <Toaster position="bottom-right" theme="light" richColors />
+        <br />
         <footer>
           <Footer />
         </footer>

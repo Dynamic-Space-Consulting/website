@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 // ✅ Validation schema
 const contactSchema = z.object({
@@ -24,13 +25,31 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ContactFormInputs>({
     resolver: zodResolver(contactSchema),
   });
+  const [loading, setLoading] = React.useState(false);
 
   const onSubmit = (data: ContactFormInputs) => {
-    console.log("Form Values:", data);
+    setLoading(true);
+    fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then(response => {
+      if (response.ok) {
+        reset();
+        toast.success('Message sent successfully!');
+      } else {
+        toast.error('Failed to send message.');
+      }
+    }).finally(() => {
+      setLoading(false);
+    });
   };
 
   return (
@@ -153,7 +172,7 @@ export default function ContactForm() {
           type="submit"
           className="w-full"
         >
-          Send Message
+         {loading ? "Sending..." : "Send Message"}
         </Button>
       </form>
     </div>
