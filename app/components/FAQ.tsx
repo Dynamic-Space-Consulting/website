@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronRight, MoveRight, ChevronDown, ChevronUp } from "lucide-react";
+import { MoveRight, ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
   {

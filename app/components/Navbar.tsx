@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -29,7 +29,6 @@ const navLinks = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const router = useRouter();
 
   return (
     <nav className="absolute top-0 w-full z-50 max-w-7xl mx-auto bg-transparent">
