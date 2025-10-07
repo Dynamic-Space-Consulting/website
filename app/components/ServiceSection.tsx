@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface ServiceSectionProps {
@@ -26,8 +27,12 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
       }`}
     >
       {/* Image Section */}
-      <div className={`relative w-full md:w-1/2 flex justify-center ${reverse ? "md:justify-end md:mr-40" : "md:justify-start"}`}>
-        <div className={`absolute -bottom-8 ${reverse ? "-right-4 md:-right-8" : "-right-4 md:-left-8"} w-[80%] h-[90%] bg-[#0A3D62] rounded-lg`}></div>
+      <div
+        className={`relative w-full md:w-1/2 flex justify-center ${reverse ? "md:justify-end md:mr-40" : "md:justify-start"}`}
+      >
+        <div
+          className={`absolute -bottom-8 ${reverse ? "-right-4 md:-right-8" : "-right-4 md:-left-8"} w-[80%] h-[90%] bg-[#0A3D62] rounded-lg`}
+        ></div>
         <Image
           src={image}
           alt={title}
@@ -50,8 +55,9 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
             <li key={index}>{point}</li>
           ))}
         </ul>
-
-        <Button className="mt-3">Book a Free Consultation</Button>
+        <Link href="/contact-us"> 
+          <Button className="mt-3">Book a Free Consultation</Button>
+        </Link>
       </div>
     </section>
   );

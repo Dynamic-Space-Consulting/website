@@ -1,60 +1,51 @@
 "use client";
 
-import { Linkedin, Twitter, Instagram, Facebook, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { FaXTwitter } from "react-icons/fa6";
-import { PiLinkedinLogoBold } from "react-icons/pi";
-import { LuInstagram } from "react-icons/lu";
-import { AiOutlineFacebook } from "react-icons/ai";
+import { useEffect } from "react";
 import Socials from "./Socials";
 
 export default function Footer() {
-  const footerRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const handleScroll = () => {
-      if (!footerRef.current || !contentRef.current) return;
-
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const footerTop = footerRef.current.offsetTop;
-
-      // Calculate how much of the footer is visible
-      const scrollProgress = Math.max(
-        0,
-        Math.min(1, (scrollY + windowHeight - footerTop) / windowHeight)
-      );
-
-      // Apply opposite parallax only when footer is in view
-      if (scrollProgress > 0) {
-        // Opposite parallax: content moves down as you scroll down
-        const parallaxOffset = scrollProgress * 50; // Adjust multiplier for effect strength
-        contentRef.current.style.transform = `translateY(${parallaxOffset}px)`;
-      } else {
-        // Reset transform when footer is not in view
-        contentRef.current.style.transform = `translateY(0px)`;
+      const section = document.getElementById('footer-section');
+      const bg = document.getElementById('footer-parallax-bg');
+      
+      if (bg && section) {
+        const rect = section.getBoundingClientRect();
+        const scrolled = window.scrollY - (section.offsetTop - window.innerHeight);
+        
+        // Only apply parallax when section is in view
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          bg.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <footer
-      //   ref={footerRef}
+      id="footer-section"
       className="relative overflow-hidden"
-      style={{
-        backgroundImage: "url('/footer-bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center bottom",
-        backgroundRepeat: "no-repeat",
-      }}
     >
-      <div ref={contentRef} className="relative z-10">
+      {/* Parallax Background */}
+      <div
+        id="footer-parallax-bg"
+        className="absolute -z-10 bg-cover bg-center bg-no-repeat w-full"
+        style={{
+          backgroundImage: "url('/footer-bg.png')",
+          height: '100%',
+          top: '-25%',
+          left: 0,
+          right: 0,
+          willChange: 'transform'
+        }}
+      />
+
+      <div className="relative z-10 pt-10 pb-2">
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-12 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">

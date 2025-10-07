@@ -1,3 +1,5 @@
+import CTASection from "../components/CTASection";
+import FAQSection from "../components/FAQ";
 import { HeroSection } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
 import OurImpact from "../components/OurImpact";
@@ -68,6 +70,8 @@ export default function WhatWeDo() {
       </div>
 
       <OurImpact />
+      <FAQSection />
+      <CTASection />
     </main>
   );
 }

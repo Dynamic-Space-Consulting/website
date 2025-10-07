@@ -45,7 +45,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex" viewport={false}>
+        <NavigationMenu className="hidden lg:flex" viewport={false}>
           <NavigationMenuList className="space-x-8">
             {navLinks.map((link, index) => {
               if (index === 2) {
@@ -93,7 +93,7 @@ export function Navbar() {
         <Sheet>
           <SheetTrigger asChild>
             <button
-              className="md:hidden text-gray-100 hover:text-yellow-400 transition-colors"
+              className="lg:hidden text-gray-100 hover:text-yellow-400 transition-colors"
               aria-label="Toggle mobile menu"
             >
               <Menu size={24} />
@@ -157,7 +157,7 @@ export function Navbar() {
         {/* Desktop Contact Button */}
         <Button
           asChild
-          className="hidden md:inline-flex bg-yellow hover:bg-yellow-600 text-primary font-semibold"
+          className="hidden lg:inline-flex bg-yellow hover:bg-yellow-600 text-primary font-semibold"
         >
           <Link href="/contact-us">Contact Us</Link>
         </Button>

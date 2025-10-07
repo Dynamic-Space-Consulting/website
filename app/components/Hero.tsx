@@ -63,10 +63,10 @@ export function HeroSection({
         {button && (
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <Button asChild className="text-sm sm:text-base px-6 py-3">
-              <Link href="/consultation">Book a Free Consultation</Link>
+              <Link href="/contact-us">Book a Free Consultation</Link>
             </Button>
             <Button asChild variant="outline" className="text-sm sm:text-base px-6 py-3">
-              <Link href="/services">Discover Our Services</Link>
+              <Link href="/what-we-do">Discover Our Services</Link>
             </Button>
           </div>
         )}

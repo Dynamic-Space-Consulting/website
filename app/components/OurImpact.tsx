@@ -1,15 +1,24 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect } from 'react';
 
 const OurImpact = () => {
   useEffect(() => {
     const handleScroll = () => {
+      const section = document.getElementById('impact-section');
       const bg = document.getElementById('parallax-bg');
-      if (bg) {
-        // Use negative translation to move background slower upward
-        bg.style.transform = `translateY(${window.scrollY * -0.2}px)`;
+      
+      if (bg && section) {
+        const rect = section.getBoundingClientRect();
+        const scrolled = window.scrollY - (section.offsetTop - window.innerHeight);
+        
+        // Only apply parallax when section is in view
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          bg.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
       }
     };
 
@@ -18,27 +27,30 @@ const OurImpact = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden text-white">
+    <section id="impact-section" className="relative overflow-hidden text-white  md:max-h-[80rem]">
       {/* Parallax Background */}
       <div
         id="parallax-bg"
-        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        className="absolute -z-10 bg-cover bg-center bg-no-repeat w-full"
         style={{ 
           backgroundImage: 'url(/impact-bg.png)',
-          height: '120%',
-          top: '-10%'
+          height: '150%',
+          top: '-25%',
+          left: 0,
+          right: 0,
+          willChange: 'transform'
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="relative max-w-7xl mx-auto px-6 py-20">
         <div className="text-center mb-12">
-          <p className="text-yellow-500 uppercase tracking-wider text-sm font-semibold">Why Choose Us</p>
-          <h2 className="text-4xl font-bold text-white">Our Impact</h2>
+          <p className="text-yellow uppercase tracking-wider text-sm font-semibold py-2">Why Choose Us</p>
+          <h2 className="text-4xl font-bold font-sans-pro text-white">Our Impact</h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12 md:px-10">
           {/* Left - Image */}
-          <div className="flex-shrink-0">
+          <div className="flex justify-end lg:w-1/2">
             <Image
               src="/impact.png"
               alt="Coin jar with plant"
@@ -49,11 +61,11 @@ const OurImpact = () => {
           </div>
 
           {/* Right - Impact Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+          <div className="grid grid-cols-1 gap-6 lg:w-1/2 md:max-w-xl">
             {impactData.map(({ title, description }) => (
-              <div key={title} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                <h3 className="font-semibold text-lg text-white mb-2">{title}</h3>
-                <p className="text-sm text-gray-200">{description}</p>
+              <div key={title} className="bg-[#FAFAFA1A]/10 backdrop-blur-sm rounded-lg p-2 border border-[#CAD4DC]/20 flex flex-row justify-between space-x-4 items-center">
+                <h3 className="font-semibold text-base text-white mb-2 w-1/3">{title}</h3>
+                <p className="text-sm text-[#E2E8F0] w-2/3">{description}</p>
               </div>
             ))}
           </div>
@@ -61,12 +73,14 @@ const OurImpact = () => {
 
         {/* CTA Buttons */}
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-lg transition">
-            Book a Free Consultation
-          </button>
-          <button className="border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black font-semibold px-6 py-3 rounded-lg transition">
-            Discover Our Services
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <Button asChild className="text-sm sm:text-base px-6 py-3">
+              <Link href="/contact-us">Book a Free Consultation</Link>
+            </Button>
+            <Button asChild variant="outline" className="text-sm sm:text-base px-6 py-3">
+              <Link href="/contact-us">Discover Our Services</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
