@@ -144,7 +144,7 @@ export function Navbar() {
                   asChild
                   className="w-full bg-yellow hover:bg-yellow-600 text-primary font-semibold"
                 >
-                  <Link href="/contact">
+                  <Link href="/contact-us">
                     Contact Us
                   </Link>
                 </Button>
