@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Footer from "./components/Footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Dynamic Space Consulting",
@@ -24,10 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`font-inter antialiased max-w-[90rem] mx-auto bg-white`}>
         {children}
+        <Toaster position="bottom-right" theme="light" richColors />
+        <br />
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );
