@@ -42,7 +42,7 @@ const OurImpact = () => {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 py-20">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-10 py-20">
         <div className="text-center mb-12">
           <p className="text-yellow uppercase tracking-wider text-sm font-semibold py-2">Why Choose Us</p>
           <h2 className="text-4xl font-bold font-sans-pro text-white">Our Impact</h2>
@@ -50,7 +50,7 @@ const OurImpact = () => {
 
         <div className="flex flex-col lg:flex-row items-center gap-12 md:px-10">
           {/* Left - Image */}
-          <div className="flex justify-end lg:w-1/2">
+          <div className="flex justify-start lg:w-1/2">
             <Image
               src="/impact.png"
               alt="Coin jar with plant"

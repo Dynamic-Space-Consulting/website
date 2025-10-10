@@ -4,17 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import Socials from "./Socials";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById('footer-section');
-      const bg = document.getElementById('footer-parallax-bg');
-      
+      const section = document.getElementById("footer-section");
+      const bg = document.getElementById("footer-parallax-bg");
+
       if (bg && section) {
         const rect = section.getBoundingClientRect();
-        const scrolled = window.scrollY - (section.offsetTop - window.innerHeight);
-        
+        const scrolled =
+          window.scrollY - (section.offsetTop - window.innerHeight);
+
         // Only apply parallax when section is in view
         if (rect.top < window.innerHeight && rect.bottom > 0) {
           bg.style.transform = `translateY(${scrolled * 0.3}px)`;
@@ -22,32 +24,29 @@ export default function Footer() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <footer
-      id="footer-section"
-      className="relative overflow-hidden"
-    >
+    <footer id="footer-section" className="relative overflow-hidden">
       {/* Parallax Background */}
       <div
         id="footer-parallax-bg"
         className="absolute -z-10 bg-cover bg-center bg-no-repeat w-full"
         style={{
           backgroundImage: "url('/footer-bg.png')",
-          height: '100%',
-          top: '-25%',
+          height: "100%",
+          top: "-25%",
           left: 0,
           right: 0,
-          willChange: 'transform'
+          willChange: "transform",
         }}
       />
 
-      <div className="relative z-10 pt-10 pb-2">
+      <div className="relative z-10 pt-10 pb-2 px-8 md:px-18 2xl:px-40">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-12 py-12">
+        <div className="max-w-7xl mx-auto py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
             {/* Company Info Column */}
             <div className="lg:col-span-3">
@@ -78,6 +77,19 @@ export default function Footer() {
 
               {/* Social Media Icons */}
               <Socials />
+
+              {/* Contact Info */}
+              <div className="mt-6">
+                <p className="text-[#FAFAFA] text-sm font-semibold flex items-center">
+                  <Mail className="inline mr-2 font-bold" size={20} />{" "}
+                  <a
+                    href="mailto:info@dynamicspaceconsulting.com"
+                    className="text-[#FAFAFA] hover:text-yellow-500 transition-colors text-sm"
+                  >
+                    info@dynamicspaceconsulting.com
+                  </a>
+                </p>
+              </div>
             </div>
 
             {/* Legal Column */}
@@ -111,7 +123,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    href="#"
+                    href="/blog"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Blog Post
@@ -119,7 +131,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/who-we-are"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     About
@@ -127,10 +139,18 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/contact-us"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Need Help?
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/pricing"
+                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
+                  >
+                    Pricing
                   </Link>
                 </li>
               </ul>
@@ -144,7 +164,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    href="#"
+                    href="/what-we-do"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Prospect Research
@@ -152,7 +172,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/what-we-do"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Grants & Sponsorships
@@ -160,7 +180,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/what-we-do"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Fundraising Training
@@ -172,7 +192,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright Bar */}
-        <div className="border-t border-[#CAD4DC] mx-10">
+        <div className="border-t border-[#CAD4DC]">
           <div className="max-w-7xl mx-auto px-6 py-6">
             <p className="text-center text-[#FAFAFA] text-sm">
               © Dynamic Space Consulting 2025. All rights reserved

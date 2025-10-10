@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -29,10 +29,11 @@ const navLinks = [
 
 export function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
-    <nav className="absolute top-0 w-full z-50 max-w-7xl mx-auto bg-transparent">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+    <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-8 py-4">
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/logo.svg"
@@ -55,6 +56,7 @@ export function Navbar() {
                         "text-sm font-semibold transition-colors hover:text-yellow-400 bg-transparent focus:bg-transparent !data-[state=open]:bg-transparent !data-[state=open]:hover:bg-transparent !data-[state=open]:hover:text-current !data-[state=open]:focus:bg-transparent",
                         pathname === link.href ? "text-yellow" : "text-gray-100"
                       )}
+                      onClick={() => router.push(link.href)}
                     >
                       {link.label}
                     </NavigationMenuTrigger>
