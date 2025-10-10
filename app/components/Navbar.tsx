@@ -12,11 +12,7 @@ import {
   NavigationMenuContent,
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 
@@ -61,9 +57,24 @@ export function Navbar() {
                       {link.label}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent className="mt-10 !bg-[#0A3D62] !border-none flex flex-col gap-2 p-4 !w-[200px]">
-                      <Link href={link.href} className="text-sm text-[#FAFAFA] hover:text-yellow font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left">Prospect Research</Link>
-                      <Link href={link.href} className="text-sm text-[#FAFAFA] hover:text-yellow font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left">Grants and Sponsorship</Link>
-                      <Link href={link.href} className="text-sm text-[#FAFAFA] hover:text-yellow  font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left">Fundraising Training</Link>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-[#FAFAFA] hover:text-yellow font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left"
+                      >
+                        Prospect Research
+                      </Link>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-[#FAFAFA] hover:text-yellow font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left"
+                      >
+                        Grants and Sponsorship
+                      </Link>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-[#FAFAFA] hover:text-yellow  font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left"
+                      >
+                        Fundraising Training
+                      </Link>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 );
@@ -100,13 +111,21 @@ export function Navbar() {
               <Menu size={24} />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-[#0A3D62] border-gray-700 px-10">
+          <SheetContent
+            side="right"
+            className="bg-[#0A3D62] border-gray-700 px-10"
+          >
             <div className="flex flex-col space-y-6 mt-6">
               {navLinks.map((link, index) => (
                 <div key={link.href}>
                   {index === 2 ? (
                     <div>
-                      <div className="text-lg font-semibold text-gray-100 mb-3">{link.label}</div>
+                      <div
+                        className="text-lg font-semibold text-gray-100 mb-3"
+                        onClick={() => router.push(link.href)}
+                      >
+                        {link.label}
+                      </div>
                       <div className="ml-4 space-y-3">
                         <Link
                           href={link.href}
@@ -146,9 +165,7 @@ export function Navbar() {
                   asChild
                   className="w-full bg-yellow hover:bg-yellow-600 text-primary font-semibold"
                 >
-                  <Link href="/contact-us">
-                    Contact Us
-                  </Link>
+                  <Link href="/contact-us">Contact Us</Link>
                 </Button>
               </div>
             </div>

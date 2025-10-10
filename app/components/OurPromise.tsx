@@ -38,7 +38,7 @@ export default function OurPromise() {
           WHAT WE DO
         </p>
         <h2 className="text-4xl font-bold font-sans-pro text-[#0A3D62]">
-          Our Promise
+          Our Services
         </h2>
       </div>
 
