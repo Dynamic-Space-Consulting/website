@@ -56,7 +56,7 @@ export function Navbar() {
                         "text-sm font-semibold transition-colors hover:text-yellow-400 bg-transparent focus:bg-transparent !data-[state=open]:bg-transparent !data-[state=open]:hover:bg-transparent !data-[state=open]:hover:text-current !data-[state=open]:focus:bg-transparent",
                         pathname === link.href ? "text-yellow" : "text-gray-100"
                       )}
-                      onClick={(e) => router.push(link.href)}
+                      onClick={() => router.push(link.href)}
                     >
                       {link.label}
                     </NavigationMenuTrigger>

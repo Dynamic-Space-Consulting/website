@@ -1,5 +1,4 @@
 import { AiOutlineFacebook } from "react-icons/ai";
-import { FaXTwitter } from "react-icons/fa6";
 import { LuInstagram } from "react-icons/lu";
 import { PiLinkedinLogoBold } from "react-icons/pi";
 
