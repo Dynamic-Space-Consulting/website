@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "./components/Footer";
 import { Toaster } from "sonner";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Dynamic Space Consulting",
@@ -15,6 +16,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+            <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1VB2BK0P87"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1VB2BK0P87');
+          `}
+        </Script>
+      </head>
       <body className={`font-inter antialiased max-w-[90rem] mx-auto bg-white`}>
         {children}
         <Toaster position="bottom-right" theme="light" richColors />
