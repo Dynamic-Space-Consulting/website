@@ -77,7 +77,7 @@ const faqs = [
         >
           info@dynamicspaceconsulting.com
         </a>
-        . We'll schedule a brief consultation to understand your needs and
+        . We&apos;ll schedule a brief consultation to understand your needs and
         recommend the best fundraising support package for you.
       </>
     ),
