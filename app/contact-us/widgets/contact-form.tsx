@@ -89,7 +89,7 @@ export default function ContactForm() {
           <input
             {...register("fullname")}
             placeholder="John Brown"
-            className="w-full bg-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none"
+            className="w-full bg-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none placeholder:font-normal placeholder:text-[#C6C6C7] placeholder:text-sm"
           />
           {errors.fullname && (
             <p className="text-red-500 text-sm mt-1">
@@ -106,7 +106,7 @@ export default function ContactForm() {
             {...register("email")}
             type="email"
             placeholder="johnbrown@gmail.com"
-            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none"
+            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none placeholder:font-normal placeholder:text-[#C6C6C7] placeholder:text-sm"
           />
           {errors.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -120,7 +120,7 @@ export default function ContactForm() {
           <input
             {...register("subject")}
             placeholder="Request For Grant Writing For My Startup"
-            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none"
+            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none placeholder:font-normal placeholder:text-[#C6C6C7] placeholder:text-sm"
           />
           {errors.subject && (
             <p className="text-red-500 text-sm mt-1">
@@ -136,7 +136,7 @@ export default function ContactForm() {
           <input
             {...register("organization")}
             placeholder="Amazon"
-            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none"
+            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-noneplaceholder:font-normal placeholder:text-[#C6C6C7] placeholder:text-sm"
           />
         </div>
 
@@ -147,7 +147,7 @@ export default function ContactForm() {
           <input
             {...register("position")}
             placeholder="General Manager"
-            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none"
+            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none placeholder:font-normal placeholder:text-[#C6C6C7] placeholder:text-sm"
           />
         </div>
 
@@ -159,7 +159,7 @@ export default function ContactForm() {
             {...register("message")}
             rows={4}
             placeholder="Write your message here..."
-            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none"
+            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none placeholder:font-normal placeholder:text-[#C6C6C7] placeholder:text-sm"
           />
           {errors.message && (
             <p className="text-red-500 text-sm mt-1">

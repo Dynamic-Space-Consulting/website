@@ -41,7 +41,7 @@ const values = [
 
 export default function BrandValues() {
   return (
-    <section className="w-full bg-white py-20 md:mx-10">
+    <section className="w-full bg-white py-20">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <div className="text-center mb-12">
           <p className="text-yellow uppercase tracking-wider text-sm font-semibold py-2">
