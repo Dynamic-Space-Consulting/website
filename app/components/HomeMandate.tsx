@@ -21,7 +21,7 @@ export default function HomeMandate() {
           <p className=" font-normal text-base md:text-lg text-[#1A202C]">
             Dynamic Space Consulting (DSC) is a global fundraising
             consultancy firm dedicated to empowering non profits,
-            startups, and social enterprises with the resources they
+            startups, and social enterprises with the resources they 
             need to thrive.
           </p>
           <p className=" font-normal text-base md:text-lg text-[#1A202C]">
