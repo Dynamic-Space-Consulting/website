@@ -17,6 +17,7 @@ export default function Footer() {
         const scrolled =
           window.scrollY - (section.offsetTop - window.innerHeight);
 
+        // Only apply parallax when section is in view
         if (rect.top < window.innerHeight && rect.bottom > 0) {
           bg.style.transform = `translateY(${scrolled * 0.3}px)`;
         }
@@ -116,9 +117,11 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-              <p className="text-xs text-gray-400 mt-4 leading-snug">
-                *Documents are valid for 30 days from the date of download. Please visit our
-                website to access the latest version.
+
+              {/* Optional Disclaimer Below Legal Links */}
+              <p className="text-xs text-[#FAFAFA] mt-4 leading-snug opacity-75">
+                Note: These documents are valid for 30 days from download date.
+                For the latest version, please revisit this website.
               </p>
             </div>
 
