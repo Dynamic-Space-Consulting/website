@@ -97,22 +97,29 @@ export default function Footer() {
               <h3 className="text-yellow font-semibold text-lg mb-6">Legal</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link
-                    href="#"
+                  <a
+                    href="/Terms_and_Conditions.pdf"
+                    download
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Terms & Services
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    href="#"
+                  <a
+                    href="/Privacy_Policy.pdf"
+                    download
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Privacy Policy
-                  </Link>
+                  </a>
                 </li>
               </ul>
+              {/* Disclaimer Note */}
+              <p className="text-xs text-gray-400 mt-4 leading-snug">
+                *Documents are valid for 30 days from the date of download. Please visit our
+                website for the most recent version.
+              </p>
             </div>
 
             {/* Resources Column */}
