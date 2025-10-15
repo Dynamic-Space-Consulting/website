@@ -40,7 +40,7 @@ function CountUp({
 export default function WhyWorkWithUs() {
   const stats = [
     {
-      end: 1000000,
+      end: 10,
       label: "Funding Secured",
       formatter: (n: number) => `$${Math.round(n / 10000000)}M+`,
     },
