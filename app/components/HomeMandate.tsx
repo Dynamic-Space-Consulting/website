@@ -15,9 +15,18 @@ export default function HomeMandate() {
       </div>
 
       {/* Our mandate  */}
-      <section className="flex flex-col md:flex-row items-center justify-between md:space-x-20 gap-10  md:my-16 p-8 md:p-0">
+      <section
+        ref={sectionRef}
+        className="flex flex-col md:flex-row items-center justify-between md:space-x-20 gap-10  md:my-16 p-8 md:p-0"
+      >
         {/* Text Section */}
-        <div className="w-full md:w-1/2 space-y-2">
+        <div
+          className={`w-full md:w-1/2 space-y-2 transition-all duration-900 ease-out transform ${
+            textVisible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-10"
+          }`}
+        >
           <p className=" font-normal text-base md:text-lg">
             <span className="font-semibold text-[#0A3D62]">
               Dynamic Space Consulting (DSC){" "}
