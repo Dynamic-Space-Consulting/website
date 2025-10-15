@@ -13,7 +13,6 @@ export default function HomeMandate() {
           Our Mandate
         </h2>
       </div>
-
       {/* Our mandate  */}
       <section
         ref={sectionRef}
