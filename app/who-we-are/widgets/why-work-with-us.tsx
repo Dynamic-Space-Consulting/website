@@ -42,7 +42,7 @@ export default function WhyWorkWithUs() {
     {
       end: 100000000,
       label: "Funding Secured",
-      formatter: (n: number) => `$${Math.round(n / 100000000)}M+`,
+      formatter: (n: number) => `$${Math.round(n / 10000000)}M+`,
     },
     { end: 85, label: "Success Rate", formatter: (n: number) => `${n}%` },
     {
