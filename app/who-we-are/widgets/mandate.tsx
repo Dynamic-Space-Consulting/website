@@ -55,7 +55,7 @@ export default function Mandate() {
           }`}
         >
           <p className=" font-normal text-base md:text-lg">
-            <span className="font-semibold text-[#1A202C]">
+            <span className="font-semibold text-[#0A3D62]">
               Dynamic Space Consulting (DSC){" "}
             </span>{" "}
             is a global fundraising consultancy firm dedicated
