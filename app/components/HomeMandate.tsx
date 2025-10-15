@@ -22,12 +22,26 @@ export default function HomeMandate() {
         <div
           className={`w-full md:w-1/2 space-y-2 transition-all duration-900 ease-out transform ${
             textVisible
-             <p className="font-normal text-base md:text-lg">
-  <span className="font-semibold text-[#0A3D62]">
-    Dynamic Space Consulting (DSC){" "}
-  </span>
-  is a global fundraising consultancy firm dedicated ...
-</p>
+             {/* Text Section */}
+<div
+  className={`w-full md:w-1/2 space-y-4 transition-all duration-900 ease-out transform ${
+    textVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+  }`}
+>
+  {/* Company Header */}
+  <h3 className="uppercase font-extrabold text-[#0A3D62] text-2xl md:text-3xl mb-2">
+    Dynamic Space Consulting (DSC)
+  </h3>
+
+  {/* Description Paragraph */}
+  <p className="font-normal text-base md:text-lg text-[#1A202C] leading-relaxed">
+    Dynamic Space Consulting (DSC) is a global fundraising consultancy firm dedicated 
+    to empowering nonprofits, startups, and social enterprises with the resources 
+    they need to thrive. We specialize in grant writing, sponsorships, fundraising 
+    strategy, and donor engagement, delivering results-driven solutions tailored to 
+    each client’s unique mission.
+  </p>
+</div>
 
           </p>
           <p className=" font-normal text-base md:text-lg text-[#1A202C]">
