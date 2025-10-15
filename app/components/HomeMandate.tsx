@@ -37,7 +37,7 @@ export default function HomeMandate() {
 
           {/* Corrected Button Link */}
           <Link href="/what-we-do">
-            <Button className="mt-3">Discover Our Services</Button>
+            <Button className="mt-3 cursor-pointer">Discover Our Services</Button>
           </Link>
         </div>
 
