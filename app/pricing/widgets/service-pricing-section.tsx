@@ -28,6 +28,12 @@ const services = [
       "We craft compelling proposals that align your mission with funder priorities — turning great ideas into fundable projects.",
     items: [
       {
+        price: "$250.00",
+        title: "Corporate Sponsorship Proposal",
+        description:
+          "Professionally written sponsorship proposal designed to attract and engage corporate partners. It includes tailored messaging, benefit alignment, and partnership structure.",
+      },
+      {
         price: "$400.00",
         title: "Foundation Grant Proposal",
         description:
@@ -38,12 +44,6 @@ const services = [
         title: "Government Grant Proposal",
         description:
           "Comprehensive grant application package for government funding programs, including eligibility review, narrative writing, compliance formatting, and submission guidance.",
-      },
-      {
-        price: "$250.00",
-        title: "Corporate Sponsorship Proposal",
-        description:
-          "Professionally written sponsorship proposal designed to attract and engage corporate partners. It includes tailored messaging, benefit alignment, and partnership structure.",
       },
     ],
   },
