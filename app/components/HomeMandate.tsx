@@ -35,7 +35,8 @@ export default function HomeMandate() {
             required to secure funding and scale.
           </p>
 
-          <Link href="/contact-us">
+          {/* Corrected Button Link */}
+          <Link href="/what-we-do">
             <Button className="mt-3">Discover Our Services</Button>
           </Link>
         </div>
