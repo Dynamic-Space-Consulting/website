@@ -60,7 +60,7 @@ export default function Mandate() {
             </span>{" "}
             is a global fundraising consultancy firm dedicated
             to empower nonprofits, startups, and social enterprises 
-            with the resources they need to thrive.
+            with the resources they need to thrive. 
           </p>
           <p className=" font-normal text-base md:text-lg">
             We specialize in grant writing, sponsorships, fundraising strategy,
