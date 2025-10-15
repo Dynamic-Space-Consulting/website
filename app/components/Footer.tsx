@@ -17,7 +17,7 @@ export default function Footer() {
         const scrolled =
           window.scrollY - (section.offsetTop - window.innerHeight);
 
-        // Only apply parallax when section is in view
+        // Apply parallax only when section is visible
         if (rect.top < window.innerHeight && rect.bottom > 0) {
           bg.style.transform = `translateY(${scrolled * 0.3}px)`;
         }
@@ -48,6 +48,7 @@ export default function Footer() {
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
+            
             {/* Company Info Column */}
             <div className="lg:col-span-3">
               <div className="flex items-center gap-2 mb-6">
@@ -62,14 +63,14 @@ export default function Footer() {
                 </Link>
               </div>
 
-              <p className="text-[#FAFAFA] text-base font-semibold justify-start flex mb-6 md:max-w-[22rem] leading-relaxed">
+              <p className="text-[#FAFAFA] text-base font-semibold mb-6 md:max-w-[22rem] leading-relaxed">
                 We bridge the gap between bold ideas and sustainable growth,
                 equipping visionaries with the strategies, skills, and
                 connections required to secure funding and scale.
               </p>
 
               <div className="mb-6">
-                <p className="text-[#FAFAFA] text-base justify-start flex mb-6 md:max-w-[22rem] leading-relaxed font-semibold">
+                <p className="text-[#FAFAFA] text-base font-semibold md:max-w-[22rem] leading-relaxed">
                   Stay updated with the latest trends and insights. Follow us on
                   social media for engaging, up-to-date posts.
                 </p>
@@ -118,10 +119,10 @@ export default function Footer() {
                 </li>
               </ul>
 
-              {/* Optional Disclaimer Below Legal Links */}
+              {/* Disclaimer */}
               <p className="text-xs text-[#FAFAFA] mt-4 leading-snug opacity-75">
-                Note: These documents are valid for 30 days from download date.
-                For the latest version, please revisit this website.
+                Disclaimer: These documents are valid for 30 days from download
+                or viewing. Please revisit our website for the latest versions.
               </p>
             </div>
 
@@ -205,7 +206,7 @@ export default function Footer() {
         <div className="border-t border-[#CAD4DC]">
           <div className="max-w-7xl mx-auto px-6 py-6">
             <p className="text-center text-[#FAFAFA] text-sm">
-              © Dynamic Space Consulting 2025. All rights reserved
+              © Dynamic Space Consulting 2025. All rights reserved.
             </p>
           </div>
         </div>
