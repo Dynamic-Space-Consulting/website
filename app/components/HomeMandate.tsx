@@ -26,9 +26,7 @@ export default function HomeMandate() {
             </span>{" "}
             is a global fundraising consultancy firm dedicated to empowering
             nonprofits, startups, and social enterprises with the resources they
-            need to thrive. We specialize in grant writing, sponsorships,
-            fundraising strategy, and donor engagement, delivering results-driven
-            solutions tailored to each client’s unique mission.
+            need to thrive.
           </p>
 
           <p className="font-normal text-base md:text-lg text-[#1A202C] leading-relaxed">
