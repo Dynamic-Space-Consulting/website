@@ -97,8 +97,9 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="/Terms_and_Conditions.pdf"
-                    download
+                    href="/terms-and-conditions.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Terms & Services
@@ -106,18 +107,18 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/Privacy_Policy.pdf"
-                    download
+                    href="/privacy-policy.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Privacy Policy
                   </a>
                 </li>
               </ul>
-              {/* Disclaimer Note */}
               <p className="text-xs text-gray-400 mt-4 leading-snug">
-                *Documents are valid for 30 days from the date of download.
-                Please revisit this website to access the latest version.
+                *Documents are valid for 30 days from the date of download. Please visit our
+                website to access the latest version.
               </p>
             </div>
 
