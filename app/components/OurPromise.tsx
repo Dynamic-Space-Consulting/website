@@ -94,7 +94,7 @@ export default function OurPromise() {
             }`}
           >
             <h3 className="text-2xl font-bold text-[#0A3251] mb-4">
-              Grants and Sponsorship
+              Grants and Sponsorships
             </h3>
             <p className="text-gray-700 mb-6">
               Write, apply, and manage high-quality proposals.
