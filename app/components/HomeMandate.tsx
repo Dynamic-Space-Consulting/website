@@ -19,19 +19,16 @@ export default function HomeMandate() {
       <section className="flex flex-col md:flex-row items-center justify-between md:space-x-20 gap-10 md:my-16 p-8 md:p-0">
         {/* Text Section */}
         <div className="w-full md:w-1/2 space-y-4">
-          {/* Company Header */}
-          <h3 className="uppercase font-extrabold text-[#0A3D62] text-2xl md:text-3xl mb-2">
-            Dynamic Space Consulting (DSC)
-          </h3>
-
-          {/* Description Paragraph */}
+          {/* Main Paragraph */}
           <p className="font-normal text-base md:text-lg text-[#1A202C] leading-relaxed">
-            Dynamic Space Consulting (DSC) is a global fundraising consultancy
-            firm dedicated to empowering nonprofits, startups, and social
-            enterprises with the resources they need to thrive. We specialize in
-            grant writing, sponsorships, fundraising strategy, and donor
-            engagement, delivering results-driven solutions tailored to each
-            client’s unique mission.
+            <span className="font-semibold text-[#0A3D62] text-lg">
+              Dynamic Space Consulting (DSC)
+            </span>{" "}
+            is a global fundraising consultancy firm dedicated to empowering
+            nonprofits, startups, and social enterprises with the resources they
+            need to thrive. We specialize in grant writing, sponsorships,
+            fundraising strategy, and donor engagement, delivering results-driven
+            solutions tailored to each client’s unique mission.
           </p>
 
           <p className="font-normal text-base md:text-lg text-[#1A202C] leading-relaxed">
