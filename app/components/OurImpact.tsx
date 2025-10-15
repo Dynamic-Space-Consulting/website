@@ -89,7 +89,7 @@ const OurImpact = () => {
 
 const impactData = [
   {
-    title: '$100M+ Funding Secured',
+    title: '$10M+ Funding Secured',
     description: 'Raised for top organizations through grants, partnerships, and fundraising strategies.',
   },
   {
