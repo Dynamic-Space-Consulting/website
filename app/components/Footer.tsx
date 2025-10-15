@@ -149,7 +149,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/contact-u
+                    href="/contact-us"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Need Help?
