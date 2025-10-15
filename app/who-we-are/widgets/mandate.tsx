@@ -58,9 +58,9 @@ export default function Mandate() {
             <span className="font-semibold text-[#1A202C]">
               Dynamic Space Consulting (DSC){" "}
             </span>{" "}
-            is an international fundraising and grant consulting firm dedicated
-            to empowering nonprofits, startups, and social enterprises with the
-            resources they need to thrive.
+            is a global fundraising consultancy firm dedicated
+            to empower nonprofits, startups, and social enterprises 
+            with the resources they need to thrive.
           </p>
           <p className=" font-normal text-base md:text-lg">
             We specialize in grant writing, sponsorships, fundraising strategy,
