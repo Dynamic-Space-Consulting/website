@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa6";
-import { Navbar } from "../components/Navbar"; // ✅ Correct import (Navbar is a named export)
+import { Navbar } from "../components/Navbar";
 
 export default function MeetOurExperts() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -44,24 +44,20 @@ export default function MeetOurExperts() {
 
       {/* ✅ Hero Section */}
       <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center">
-        {/* Background Image */}
         <Image
-          src="/meet-our-expert.png"
+          src="/meet-our-experts.png" // ✅ Corrected image path
           alt="Meet Our Experts"
           fill
           className="object-cover"
           priority
         />
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
-        {/* Text Content */}
         <div className="relative z-10 text-center text-white px-6">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
             Meet Our Experts
           </h1>
           <p className="max-w-2xl mx-auto text-base md:text-lg">
-            Get to know the minds behind Dynamic Space Consulting — 
-            passionate experts shaping innovative, impactful, and sustainable growth strategies.
+            Get to know the creative minds behind Dynamic Space Consulting.
           </p>
         </div>
       </section>
