@@ -100,7 +100,7 @@ export default function MeetOurExperts() {
                   : "opacity-0 -translate-x-10"
               }`}
             >
-              <h3 className="text-[#0A3D62] text-xl md:text-2xl">
+              <h3 className="font-semibold text-[#0A3D62] text-xl md:text-2xl">
                 John James - Co-Founder/CEO
               </h3>
               <p className="font-normal text-base md:text-lg text-[#545556]">
@@ -160,7 +160,7 @@ export default function MeetOurExperts() {
                   : "opacity-0 -translate-x-10"
               }`}
             >
-              <h3 className="text-[#0A3D62] text-xl md:text-2xl">
+              <h3 className="font-semibold text-[#0A3D62] text-xl md:text-2xl">
                 Damilola Ayoola - Co-Founder/COO
               </h3>
               <p className="font-normal text-base md:text-lg text-[#545556]">
