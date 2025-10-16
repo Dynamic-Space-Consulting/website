@@ -41,22 +41,42 @@ export function HomeHeroSection({
   }, []);
 
   return (
-    <div className="relative w-full h-[100vh] overflow-hidden">
-      {/* Sticky video background */}
-      <div className="absolute inset-0 h-[100vh] w-full">
+    <div className="relative">
+      {/* FIXED poster background for reliable "sticky" effect */}
+      <div
+        aria-hidden
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100vh",
+          backgroundImage: "url('/hero-poster.jpg')", // ensure file exists in /public
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          zIndex: -30,
+        }}
+      />
+
+      {/* decorative video layer (not fixed) - plays on top of poster */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+        style={{ zIndex: -20 }}
+      >
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="sticky top-0 w-full h-screen object-cover"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-70"
         >
           <source src="/dynamic_hero.mp4" type="video/mp4" />
         </video>
       </div>
 
-      {/* Hero content overlay */}
-      <section className="relative flex flex-col items-center justify-center text-center text-white h-[100vh] z-10">
+      {/* HERO CONTENT (keeps your original layout & copy) */}
+      <section className="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-visible z-10">
         <div
           ref={contentRef}
           className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -86,8 +106,10 @@ export function HomeHeroSection({
         </div>
       </section>
 
-      {/* White overlay section that scrolls over the hero */}
-      <div className="relative bg-white w-full h-[40vh] md:h-[60vh] z-20"></div>
+      {/* White overlay section that scrolls over the hero video/poster */}
+      <div className="relative z-20 -mt-40 pt-40 bg-white rounded-t-3xl shadow-[0_-15px_40px_rgba(10,61,98,0.08)]">
+        {/* Keep this empty or put the first page content here (this div creates the white surface) */}
+      </div>
     </div>
   );
 }
