@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -15,35 +17,30 @@ export default function Footer() {
         const scrolled =
           window.scrollY - (section.offsetTop - window.innerHeight);
 
-        // Apply parallax only when section is visible
+        // Apply subtle parallax only when visible
         if (rect.top < window.innerHeight && rect.bottom > 0) {
-          bg.style.transform = `translateY(${scrolled * 0.3}px)`;
+          bg.style.transform = `translateY(${scrolled * 0.2}px)`; // smooth scroll
         }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <footer id="footer-section" className="relative overflow-hidden">
-      {/* Parallax Background */}
+      {/* ✅ Parallax Background */}
       <div
         id="footer-parallax-bg"
-        className="absolute -z-10 bg-cover bg-center bg-no-repeat w-full"
+        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat w-full h-full transition-transform duration-500 will-change-transform"
         style={{
           backgroundImage: "url('/footer-bg.png')",
-          height: "100%",
-          top: "-25%",
-          left: 0,
-          right: 0,
-          willChange: "transform",
         }}
       />
 
-      <div className="relative z-10 pt-10 pb-2 px-8 md:px-18 2xl:px-40">
-        {/* Main Footer Content */}
+      {/* ✅ Main Footer Content */}
+      <div className="relative z-10 pt-10 pb-2 px-8 md:px-18 2xl:px-40 bg-black/70 backdrop-blur-[2px]">
         <div className="max-w-7xl mx-auto py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
             
@@ -156,7 +153,6 @@ export default function Footer() {
                     Pricing
                   </Link>
                 </li>
-                {/* NEW: Meet Our Experts */}
                 <li>
                   <Link
                     href="/meet-our-experts"
@@ -203,7 +199,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright Bar */}
+        {/* ✅ Copyright Bar */}
         <div className="border-t border-[#CAD4DC]">
           <div className="max-w-7xl mx-auto px-6 py-6">
             <p className="text-center text-[#FAFAFA] text-sm">
