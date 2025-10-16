@@ -1,11 +1,11 @@
 "use client";
-
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa6";
 
-export default function MeetOurExpertsPage() {
+export default function OurTeam() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const section2Ref = useRef<HTMLElement | null>(null);
   const [textVisible, setTextVisible] = useState(false);
@@ -18,146 +18,161 @@ export default function MeetOurExpertsPage() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting && e.target === sectionRef.current) {
+          // Start text animation immediately
           setTextVisible(true);
+          // Start image animation after 400ms
           setTimeout(() => setImageVisible(true), 400);
           observer.unobserve(e.target);
         }
         if (e.isIntersecting && e.target === section2Ref.current) {
+          // Start text animation immediately
           setText2Visible(true);
+          // Start image animation after 400ms
           setTimeout(() => setImage2Visible(true), 400);
           observer.unobserve(e.target);
         }
       });
     }, opts);
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    if (section2Ref.current) observer.observe(section2Ref.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    if (section2Ref.current) {
+      observer.observe(section2Ref.current);
+    }
 
     return () => observer.disconnect();
   }, []);
-
   return (
-    <main className="w-full">
-      {/* Hero */}
-      <div className="bg-[url('/footer-bg.png')] bg-cover bg-center py-24">
-        <div className="max-w-6xl mx-auto text-center px-6">
-          <p className="text-yellow uppercase tracking-wider text-sm font-semibold py-2">
-            OUR TEAM
-          </p>
-          <h1 className="text-3xl md:text-5xl font-bold text-white">
-            Meet Our Experts
-          </h1>
-          <p className="text-white/90 mt-3 max-w-2xl mx-auto">
-            A team of fundraising, grants and strategy experts dedicated to
-            helping organisations secure funding and scale their impact.
-          </p>
-        </div>
+    <section className="w-full py-6 md:py-16">
+      <div className="text-center mb-12">
+        <p className="text-yellow uppercase tracking-wider text-sm font-semibold py-2">
+          OUR TEAM
+        </p>
+        <h2 className="text-2xl md:text-4xl font-bold font-sans-pro text-[#0A3D62]">
+          Meet Our Experts
+        </h2>
       </div>
 
-      {/* First Member */}
-      <section className="md:my-12 max-w-6xl mx-auto px-6 md:px-10">
+      <div className="md:my-12 max-w-6xl mx-auto px-6 md:px-10">
         <section
           ref={sectionRef}
-          className="flex flex-col md:flex-row items-center justify-between gap-10 md:py-12"
+          className="flex flex-col md:flex-row items-center justify-between md:space-x-20 gap-10  md:my-16 p-8 md:p-0"
         >
-          {/* Image */}
+          {/* Image Section */}
           <div
-            className={`relative w-full md:w-1/2 flex justify-end transition-all duration-700 ease-out transform ${
-              imageVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            className={`relative w-full md:w-1/2 flex justify-end transition-all duration-900 ease-out transform ${
+              imageVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-10"
             }`}
           >
-            <div className="absolute bottom-2 right-3 w-[80%] h-[83%] bg-[#0A3D62] rounded-lg" />
+            <div className="absolute bottom-2 right-3 w-[80%] h-[83%] bg-[#0A3D62] rounded-lg"></div>
             <Image
               src="/team_member_one.png"
-              alt="John James"
+              alt="Team Member One"
               className="relative rounded-lg z-10 w-full max-w-md object-cover"
-              width={500}
-              height={400}
-              priority={true}
+              width={400}
+              height={300}
             />
           </div>
-
-          {/* Text */}
+          {/* Text Section */}
           <div
-            className={`w-full md:w-1/2 space-y-4 transition-all duration-700 ease-out transform ${
-              textVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+            className={`w-full md:w-1/2 space-y-2 md:px-4 transition-all duration-900 ease-out transform ${
+              textVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-10"
             }`}
           >
-            <h3 className="text-[#0A3D62] text-2xl font-semibold">
-              John James — Co-Founder & CEO
+            <h3 className="text-[#0A3D62] text-xl md:text-2xl">
+              John James - Co-Founder/CEO
             </h3>
-            <p className="text-[#545556] text-base md:text-lg leading-relaxed">
-              John is a certified grant writer and fundraising consultant with
-              7+ years helping organisations build funding pipelines, craft
-              winning proposals and form strategic partnerships.
+            <p className="font-normal text-base md:text-lg text-[#545556]">
+              John is a certified grant writer and experienced fundraising
+              consultant with over seven years of experience helping
+              organizations build strong funding pipelines, craft winning
+              proposals, and form strategic partnerships that drive meaningful
+              change.
             </p>
-            <p className="text-[#545556]">
-              Background in Accounting & Law — blends analytical rigor with
-              strategic thinking to help ideas find long-term funding.
+            <p className="font-normal text-base md:text-lg text-[#545556]">
+              With a dual background in Accounting and Law, he brings a rare
+              blend of analytical thinking, financial clarity, and strategic
+              insight to every engagement. At Dynamic Space Consulting, he leads
+              with the belief that every great idea deserves the opportunity to
+              thrive.
             </p>
             <Link
               href="https://www.linkedin.com/in/johnjames111"
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#0A3D62] font-semibold"
+              className="text-[#0A3D62] font-semibold inline-flex items-center gap-2"
             >
               <FaLinkedin />
               LinkedIn
             </Link>
           </div>
         </section>
-      </section>
+      </div>
 
-      {/* Second Member */}
-      <section className="md:my-12 max-w-6xl mx-auto px-6 md:px-20 pt-10">
+      <div className="md:my-12 max-w-6xl mx-auto px-6 md:px-20 pt-10">
+        {/* Second Section - Reversed Layout */}
         <section
           ref={section2Ref}
-          className="flex flex-col md:flex-row-reverse items-center justify-between gap-10 md:py-12"
+          className="flex flex-col md:flex-row-reverse items-center justify-between md:space-x-0 md:space-x-reverse gap-20  p-8 md:p-0"
         >
-          {/* Image */}
+          {/* Image Section */}
           <div
-            className={`relative w-full md:w-[45%] transition-all duration-700 ease-out transform ${
-              image2Visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            className={`relative w-full md:w-[45%] transition-all duration-900 ease-out transform ${
+              image2Visible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-10"
             }`}
           >
-            <div className="absolute bottom-2 left-3 w-[80%] h-[83%] bg-[#0A3D62] rounded-lg" />
+            <div className="absolute bottom-2 left-3 w-[80%] h-[83%] bg-[#0A3D62] rounded-lg"></div>
             <Image
               src="/team_member_two.png"
-              alt="Damilola Ayoola"
+              alt="Team Member Two"
               className="relative rounded-lg z-10 w-full max-w-md object-cover"
-              width={500}
-              height={400}
+              width={400}
+              height={300}
             />
           </div>
-
-          {/* Text */}
+          {/* Text Section */}
           <div
-            className={`w-full md:w-[45%] space-y-4 transition-all duration-700 ease-out transform ${
-              text2Visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+            className={`w-full md:w-[45%] space-y-2 transition-all duration-900 ease-out transform ${
+              text2Visible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-10"
             }`}
           >
-            <h3 className="text-[#0A3D62] text-2xl font-semibold">
-              Damilola Ayoola — Co-Founder & COO
+            <h3 className="text-[#0A3D62] text-xl md:text-2xl">
+              Damilola Ayoola - Co-Founder/COO
             </h3>
-            <p className="text-[#545556] text-base md:text-lg leading-relaxed">
-              Damilola has 5+ years in international grant writing and fundraising,
-              focusing on humanitarian, education and social development sectors.
+            <p className="font-normal text-base md:text-lg text-[#545556]">
+              With a background in Nutrition and Dietetics and over five years
+              of experience in international grant writing and fundraising,
+              Damilola Ayoola has helped nonprofits and social enterprises
+              secure vital funding and strengthen donor partnerships. Her work
+              spans the humanitarian, education, and social development sectors,
+              where she combines strategy, clarity, and compassion to drive
+              meaningful results.
             </p>
-            <p className="text-[#545556]">
-              She helps organisations design competitive proposals and build durable donor partnerships.
+            <p className="font-normal text-base md:text-lg text-[#545556]">
+              At Dynamic Space Consulting, Damilola plays a key leadership role
+              in guiding purpose-driven organizations to develop competitive
+              proposals, build lasting partnerships, and design funding
+              strategies that create measurable impact.
             </p>
             <Link
               href="https://www.linkedin.com/in/damilola-oluwafemi-a6b898129"
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#0A3D62] font-semibold"
+              className="text-[#0A3D62] font-semibold inline-flex items-center gap-2"
             >
               <FaLinkedin />
               LinkedIn
             </Link>
           </div>
         </section>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
