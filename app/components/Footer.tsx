@@ -118,12 +118,6 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-
-              {/* Disclaimer */}
-              <p className="text-xs text-[#FAFAFA] mt-4 leading-snug opacity-75">
-                Disclaimer: These documents are valid for 30 days from download
-                or viewing. Please revisit our website for the latest versions.
-              </p>
             </div>
 
             {/* Resources Column */}
@@ -162,6 +156,15 @@ export default function Footer() {
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Pricing
+                  </Link>
+                </li>
+                {/* NEW: Meet Our Experts */}
+                <li>
+                  <Link
+                    href="/meet-our-experts"
+                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
+                  >
+                    Meet Our Experts
                   </Link>
                 </li>
               </ul>
