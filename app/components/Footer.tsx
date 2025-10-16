@@ -18,7 +18,8 @@ export default function Footer() {
 
         // Apply parallax only when section is visible
         if (rect.top < window.innerHeight && rect.bottom > 0) {
-          bg.style.transform = `translateY(${scrolled * 0.2}px)`; // subtle movement
+          // move background a bit for parallax
+          (bg as HTMLElement).style.transform = `translateY(${scrolled * 0.2}px)`;
         }
       }
     };
@@ -28,24 +29,31 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer
-      id="footer-section"
-      className="relative overflow-hidden bg-[#0A3D62] text-white"
-    >
-      {/* ✅ Sticky Parallax Background */}
+    <footer id="footer-section" className="relative overflow-hidden">
+      {/* --- BACKGROUND IMAGE (Next/Image fill for reliability) --- */}
       <div
         id="footer-parallax-bg"
-        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/footer-bg.png')",
-          backgroundAttachment: "fixed", // makes it sticky
-          transform: "translateY(0px)",
-          transition: "transform 0.2s ease-out",
-        }}
-      />
+        className="absolute inset-0 -z-30"
+        style={{ willChange: "transform", transform: "translateY(0px)" }}
+        aria-hidden
+      >
+        <Image
+          src="/footer-bg.png"
+          alt=""
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 100vw"
+          className="object-cover"
+          style={{ objectPosition: "center" }}
+        />
+      </div>
 
-      {/* ✅ Overlay Gradient for readability */}
-      <div className="absolute inset-0 bg-black/50 -z-10"></div>
+      {/* overlay sits above the bg image to ensure text readability */}
+      <div
+        className="absolute inset-0 -z-20"
+        style={{ background: "linear-gradient(180deg, rgba(10,61,98,0.55), rgba(10,61,98,0.75))" }}
+        aria-hidden
+      />
 
       <div className="relative z-10 pt-10 pb-2 px-8 md:px-18 2xl:px-40">
         {/* Main Footer Content */}
