@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar";
 import Mandate from "./widgets/mandate";
 import WhyWorkWithUs from "./widgets/why-work-with-us";
 import BrandValues from "./widgets/what-we-represent";
-import OurPromise from "../components/OurPromise";
+import OurTeam from "./widgets/our-team";
 
 export default function WhoWeAre() {
   return (
@@ -19,7 +19,8 @@ export default function WhoWeAre() {
       <Mandate />
       <WhyWorkWithUs />
       <BrandValues />
-      <OurPromise />
+      <OurTeam />
+      {/* <OurPromise /> */}
       <CTASection />
     </main>
   );
