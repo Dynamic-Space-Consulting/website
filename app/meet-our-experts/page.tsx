@@ -42,15 +42,11 @@ export default function MeetOurExperts() {
       {/* ✅ Navbar */}
       <Navbar />
 
-      {/* ✅ Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center">
-        <Image
-          src="/meet-our-experts.png" // ✅ Corrected image path
-          alt="Meet Our Experts"
-          fill
-          className="object-cover"
-          priority
-        />
+      {/* ✅ Hero Section - Full height & Parallax */}
+      <section
+        className="relative w-full h-screen flex items-center justify-center bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: "url('/meet-our-experts.png')" }}
+      >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-center text-white px-6">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
@@ -95,6 +91,7 @@ export default function MeetOurExperts() {
                 height={300}
               />
             </div>
+
             {/* Text Section */}
             <div
               className={`w-full md:w-1/2 space-y-2 md:px-4 transition-all duration-900 ease-out transform ${
@@ -154,6 +151,7 @@ export default function MeetOurExperts() {
                 height={300}
               />
             </div>
+
             {/* Text Section */}
             <div
               className={`w-full md:w-[45%] space-y-2 transition-all duration-900 ease-out transform ${
