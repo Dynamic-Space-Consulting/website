@@ -94,13 +94,7 @@ export default function OurTeam() {
               proposals, and form strategic partnerships that drive meaningful
               change.
             </p>
-            <p className="font-normal text-base md:text-lg text-[#545556]">
-              With a dual background in Accounting and Law, he brings a rare
-              blend of analytical thinking, financial clarity, and strategic
-              insight to every engagement. At Dynamic Space Consulting, he leads
-              with the belief that every great idea deserves the opportunity to
-              thrive.
-            </p>
+            
             <Link
               href="https://www.linkedin.com/in/johnjames111"
               target="_blank"
@@ -151,17 +145,9 @@ export default function OurTeam() {
               With a background in Nutrition and Dietetics and over five years
               of experience in international grant writing and fundraising,
               Damilola Ayoola has helped nonprofits and social enterprises
-              secure vital funding and strengthen donor partnerships. Her work
-              spans the humanitarian, education, and social development sectors,
-              where she combines strategy, clarity, and compassion to drive
-              meaningful results.
+              secure vital funding and strengthen donor partnerships.
             </p>
-            <p className="font-normal text-base md:text-lg text-[#545556]">
-              At Dynamic Space Consulting, Damilola plays a key leadership role
-              in guiding purpose-driven organizations to develop competitive
-              proposals, build lasting partnerships, and design funding
-              strategies that create measurable impact.
-            </p>
+    
             <Link
               href="https://www.linkedin.com/in/damilola-oluwafemi-a6b898129"
               target="_blank"
@@ -172,6 +158,16 @@ export default function OurTeam() {
             </Link>
           </div>
         </section>
+      </div>
+      
+      {/* Learn More Button */}
+      <div className="text-center mt-12">
+        <Button
+          asChild
+          className="px-8 py-4 text-base font-semibold bg-[#0A3D62] hover:bg-[#092b44] text-white rounded-lg transition-colors"
+        >
+          <Link href="/meet-our-experts">Learn More</Link>
+        </Button>
       </div>
     </section>
   );
