@@ -80,7 +80,7 @@ export default function OurTeam() {
                 : "opacity-0 -translate-x-10"
             }`}
           >
-            <h3 className="text-[#0A3D62] text-xl bold:text-2xl">
+            <h3 className="font-bold text-[#0A3D62] text-xl md:text-2xl">
               John James – Co-Founder / CEO
             </h3>
             <p className="font-normal text-base md:text-lg text-[#545556]">
