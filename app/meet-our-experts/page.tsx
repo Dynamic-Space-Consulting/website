@@ -1,10 +1,9 @@
 "use client";
-
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa6";
-import Navbar from "@/components/Navbar"; // ✅ Ensure path matches your folder structure
+import Navbar from "../../components/Navbar"; // ✅ Correct relative path for Vercel
 
 export default function MeetOurExperts() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -38,30 +37,32 @@ export default function MeetOurExperts() {
   }, []);
 
   return (
-    <>
+    <main className="w-full min-h-screen bg-white">
       {/* ✅ Navbar */}
       <Navbar />
 
       {/* ✅ Hero Section */}
-      <div
-        className="relative bg-cover bg-center bg-no-repeat h-[60vh] flex items-center justify-center text-center"
-        style={{ backgroundImage: "url('/meet-our-expert.png')" }} // ✅ Corrected image path
-      >
-        <div className="absolute inset-0 bg-[#0A3D62]/60" /> {/* Overlay for text clarity */}
-        <div className="relative z-10 text-white px-6 max-w-3xl">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Meet Our Experts
-          </h1>
-          <p className="text-base md:text-lg font-medium leading-relaxed text-gray-100">
-            A team of visionary fundraising and strategy experts dedicated to
-            helping organizations secure funding, build partnerships, and scale
-            their impact sustainably.
+      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+        <Image
+          src="/meet-our-experts.png"
+          alt="Meet Our Experts Hero"
+          fill
+          className="object-cover brightness-75"
+          priority
+        />
+        <div className="relative z-10 text-center text-white px-6 md:px-10">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">Meet Our Experts</h1>
+          <p className="max-w-2xl mx-auto text-base md:text-lg font-medium leading-relaxed">
+            Our success is driven by passionate professionals dedicated to helping
+            nonprofits, startups, and social enterprises secure sustainable funding
+            and build lasting impact.
           </p>
         </div>
-      </div>
+      </section>
 
       {/* ✅ Team Section */}
-      <section className="w-full py-12 md:py-20">
+      <section className="w-full py-6 md:py-16">
+        {/* John James Section */}
         <div className="md:my-12 max-w-6xl mx-auto px-6 md:px-10">
           <section
             ref={sectionRef}
@@ -78,7 +79,7 @@ export default function MeetOurExperts() {
               <div className="absolute bottom-2 right-3 w-[80%] h-[83%] bg-[#0A3D62] rounded-lg"></div>
               <Image
                 src="/team_member_one.png"
-                alt="John James - Co-Founder/CEO"
+                alt="John James - CEO"
                 className="relative rounded-lg z-10 w-full max-w-md object-cover"
                 width={400}
                 height={300}
@@ -94,21 +95,22 @@ export default function MeetOurExperts() {
               }`}
             >
               <h3 className="text-[#0A3D62] text-xl md:text-2xl font-semibold">
-                John James - Co-Founder/CEO
+                John James – Co-Founder / CEO
               </h3>
-              <p className="font-normal text-base md:text-lg text-[#545556]">
-                John is a certified grant writer and experienced fundraising
-                consultant with over seven years of experience helping
-                organizations build strong funding pipelines, craft winning
-                proposals, and form strategic partnerships that drive meaningful
-                change.
+              <p className="font-normal text-base md:text-lg text-[#545556] leading-relaxed">
+                John James is a certified grant writer and fundraising strategist
+                with over seven years of experience helping organizations access
+                diverse funding opportunities, strengthen donor relations, and
+                build long-term sustainability frameworks. His approach combines
+                analytical precision, storytelling, and stakeholder insight to
+                create compelling fundraising narratives that resonate with funders.
               </p>
-              <p className="font-normal text-base md:text-lg text-[#545556]">
-                With a dual background in Accounting and Law, he brings a rare
-                blend of analytical thinking, financial clarity, and strategic
-                insight to every engagement. At Dynamic Space Consulting, he
-                leads with the belief that every great idea deserves the
-                opportunity to thrive.
+              <p className="font-normal text-base md:text-lg text-[#545556] leading-relaxed">
+                With a dual background in Accounting and Law, John brings a rare
+                mix of financial literacy, compliance understanding, and strategic
+                foresight. At Dynamic Space Consulting, he leads with a mission to
+                ensure that every visionary organization has the tools and
+                strategies needed to thrive in a competitive funding landscape.
               </p>
               <Link
                 href="https://www.linkedin.com/in/johnjames111"
@@ -122,8 +124,8 @@ export default function MeetOurExperts() {
           </section>
         </div>
 
+        {/* Damilola Ayoola Section */}
         <div className="md:my-12 max-w-6xl mx-auto px-6 md:px-20 pt-10">
-          {/* Second Section - Reversed Layout */}
           <section
             ref={section2Ref}
             className="flex flex-col md:flex-row-reverse items-center justify-between md:space-x-0 md:space-x-reverse gap-20 p-8 md:p-0"
@@ -139,7 +141,7 @@ export default function MeetOurExperts() {
               <div className="absolute bottom-2 left-3 w-[80%] h-[83%] bg-[#0A3D62] rounded-lg"></div>
               <Image
                 src="/team_member_two.png"
-                alt="Damilola Ayoola - Co-Founder/COO"
+                alt="Damilola Ayoola - COO"
                 className="relative rounded-lg z-10 w-full max-w-md object-cover"
                 width={400}
                 height={300}
@@ -155,22 +157,21 @@ export default function MeetOurExperts() {
               }`}
             >
               <h3 className="text-[#0A3D62] text-xl md:text-2xl font-semibold">
-                Damilola Ayoola - Co-Founder/COO
+                Damilola Ayoola – Co-Founder / COO
               </h3>
-              <p className="font-normal text-base md:text-lg text-[#545556]">
-                With a background in Nutrition and Dietetics and over five years
-                of experience in international grant writing and fundraising,
-                Damilola Ayoola has helped nonprofits and social enterprises
-                secure vital funding and strengthen donor partnerships. Her work
-                spans the humanitarian, education, and social development
-                sectors, where she combines strategy, clarity, and compassion to
-                drive meaningful results.
+              <p className="font-normal text-base md:text-lg text-[#545556] leading-relaxed">
+                Damilola Ayoola is an international fundraising consultant and
+                grant writer with extensive experience supporting organizations in
+                education, humanitarian, and development sectors. With a background
+                in Nutrition and Dietetics, she brings a unique perspective that
+                balances empathy, structure, and innovation.
               </p>
-              <p className="font-normal text-base md:text-lg text-[#545556]">
-                At Dynamic Space Consulting, Damilola plays a key leadership
-                role in guiding purpose-driven organizations to develop
-                competitive proposals, build lasting partnerships, and design
-                funding strategies that create measurable impact.
+              <p className="font-normal text-base md:text-lg text-[#545556] leading-relaxed">
+                Over the past five years, she has helped numerous nonprofits and
+                startups develop winning proposals, strengthen donor engagement,
+                and implement impactful funding strategies. At Dynamic Space
+                Consulting, Damilola oversees operations and ensures every project
+                delivers measurable value, sustainable growth, and social impact.
               </p>
               <Link
                 href="https://www.linkedin.com/in/damilola-oluwafemi-a6b898129"
@@ -184,6 +185,6 @@ export default function MeetOurExperts() {
           </section>
         </div>
       </section>
-    </>
+    </main>
   );
 }
