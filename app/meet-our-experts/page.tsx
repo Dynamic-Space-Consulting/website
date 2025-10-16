@@ -4,23 +4,20 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa6";
-import Navbar from "../components/Navbar"; // ✅ Correct relative path
+import { Navbar } from "../components/Navbar"; // ✅ Corrected import
 
 export default function MeetOurExperts() {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   return (
     <>
-      {/* ✅ Navbar Section */}
       <Navbar />
 
-      {/* ✅ Main Section */}
       <section
         ref={sectionRef}
         className="min-h-screen bg-white py-20 px-6 sm:px-12 md:px-20 lg:px-28 text-center"
       >
         <div className="max-w-5xl mx-auto">
-          {/* ✅ Heading */}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Meet Our Experts
           </h1>
@@ -31,10 +28,7 @@ export default function MeetOurExperts() {
             professionals driving Dynamic Space Consulting’s global impact.
           </p>
 
-          {/* ✅ Experts Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10">
-            
-            {/* Expert 1 */}
             <div className="group">
               <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <Image
@@ -61,7 +55,6 @@ export default function MeetOurExperts() {
               </div>
             </div>
 
-            {/* Expert 2 */}
             <div className="group">
               <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <Image
@@ -90,7 +83,6 @@ export default function MeetOurExperts() {
               </div>
             </div>
 
-            {/* Expert 3 */}
             <div className="group">
               <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <Image
@@ -120,7 +112,6 @@ export default function MeetOurExperts() {
             </div>
           </div>
 
-          {/* ✅ Footer CTA */}
           <div className="mt-24">
             <Link
               href="/contact"
