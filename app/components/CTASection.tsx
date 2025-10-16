@@ -25,7 +25,7 @@ export default function CTASection() {
               variant="outline"
               className="text-sm sm:text-base px-6 py-3"
             >
-              <Link href="/contact-us">Discover Our Services</Link>
+              <Link href="/what-we-do">Discover Our Services</Link>
             </Button>
           </div>
         </div>
