@@ -33,7 +33,7 @@ export default function WhatWeDo() {
         <ServiceSection
           title="Prospect Research"
           subtitle="Identify the right funders, sponsors, and partners."
-          description="We help you cut through the noise by pinpointing funding opportunities that align with your vision. From government grants to corporate sponsorships, our in-depth research ensures you pursue only the most relevant and high-potential options."
+          description="We help you cut through the noise by pinpointing funding opportunities that align with your vision. From corporate sponsorships to government grants, our in-depth research ensures you pursue only the most relevant and high-potential options."
           points={[
             "Comprehensive database search",
             "Tailored funder matching",
@@ -48,7 +48,7 @@ export default function WhatWeDo() {
           subtitle="Writing, applying, and managing successful proposals."
           description="Our team specializes in grant writing and sponsorship strategies that resonate with funders. We handle the entire process from crafting compelling proposals to managing reporting requirements so you can focus on delivering impact."
           points={[
-            "Professional grant writing (government, foundation, corporate)",
+            "Professional grant writing (corporate, foundation, government)",
             "Proposal management and submission",
             "Sponsorship strategy development",
           ]}
