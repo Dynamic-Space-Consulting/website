@@ -1,287 +1,146 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect } from "react";
-import { Mail } from "lucide-react";
-import { Navbar } from "@/components/Navbar";
-import Socials from "@/components/Socials";
+import { useEffect, useState, useRef } from "react";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer"; // Assuming you have a Footer component
 
-export default function PrivacyPolicy() {
-  // Parallax effect for hero image
+export default function PrivacyPolicyPage() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [contentVisible, setContentVisible] = useState(false);
+
   useEffect(() => {
-    const handleScroll = () => {
-      const hero = document.getElementById("hero-image");
-      if (hero) {
-        const scrolled = window.scrollY;
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.target === sectionRef.current) {
+            setContentVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="bg-[#0A3D62] text-[#FAFAFA] min-h-screen">
+    <>
       {/* Navbar */}
       <Navbar />
 
-      {/* Hero Section with Parallax */}
-      <div className="relative w-full h-[400px] overflow-hidden">
-        <Image
-          id="hero-image"
-          src="/privacy-policy.png"
-          alt="Privacy Policy"
-          fill
-          className="object-cover object-center sticky top-0"
-          style={{ willChange: "transform" }}
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-yellow-500">
-            Privacy Policy
-          </h1>
+      {/* Hero Section */}
+      <section
+        className="relative w-full h-screen flex items-center justify-center bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: "url('/privacy-policy.png')" }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative z-10 text-center text-white px-6">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
+          <p className="max-w-2xl mx-auto text-base md:text-lg">
+            Understand how we collect, use, and protect your information
+          </p>
         </div>
-      </div>
+      </section>
 
-      {/* Content Section */}
-      <div className="max-w-5xl mx-auto px-6 py-16 space-y-8">
-        <p>
-          Welcome to Dynamic Space Consulting's Privacy Policy. Your privacy is of paramount importance to us. This policy outlines how we collect, use, and safeguard your personal information.
-        </p>
+      {/* Privacy Policy Content */}
+      <section
+        ref={sectionRef}
+        className={`max-w-6xl mx-auto px-6 md:px-10 py-12 md:py-20 transition-all duration-900 ease-out transform ${
+          contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <div className="space-y-6 text-[#545556]">
+          <p><strong>Effective Date:</strong> 10th October, 2025</p>
+          <p><strong>Website:</strong> https://www.dynamicspaceconsulting.com</p>
+          <p><strong>Company:</strong> Dynamic Space Consulting (“we,” “our,” “us”)</p>
 
-        <h2 className="text-2xl font-semibold text-yellow-500">
-          1. Information We Collect
-        </h2>
-        <p>
-          We collect information you provide directly to us, information from your use of our services, and information from third-party sources. This includes, but is not limited to, your name, email address, contact preferences, and usage data.
-        </p>
+          <h2 className="text-xl md:text-2xl font-semibold">1. Introduction</h2>
+          <p>
+            Dynamic Space Consulting respects your privacy and is committed to protecting your personal information. 
+            This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or engage our services. 
+            By using our website or services, you agree to the terms of this Privacy Policy.
+          </p>
 
-        <h2 className="text-2xl font-semibold text-yellow-500">
-          2. How We Use Information
-        </h2>
-        <p>
-          The information we collect helps us improve our services, communicate with you, personalize your experience, and comply with legal obligations. We do not sell your personal information to third parties.
-        </p>
+          <h2 className="text-xl md:text-2xl font-semibold">2. Information We Collect</h2>
+          <p><strong>A. Personal Information</strong></p>
+          <ul className="list-disc ml-6">
+            <li>Full name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Organization name</li>
+            <li>Job title or role</li>
+            <li>Billing or payment information (when applicable)</li>
+          </ul>
+          <p><strong>B. Non-Personal Information</strong></p>
+          <ul className="list-disc ml-6">
+            <li>IP address</li>
+            <li>Browser type and version</li>
+            <li>Pages visited and time spent on our site</li>
+            <li>Device information and operating system</li>
+          </ul>
 
-        <h2 className="text-2xl font-semibold text-yellow-500">
-          3. Cookies and Tracking
-        </h2>
-        <p>
-          Our website uses cookies and similar technologies to enhance user experience, analyze site usage, and assist with marketing efforts. You can adjust your cookie preferences in your browser settings.
-        </p>
+          <h2 className="text-xl md:text-2xl font-semibold">3. How We Use Your Information</h2>
+          <ul className="list-disc ml-6">
+            <li>Respond to inquiries and service requests.</li>
+            <li>Deliver consulting, training, and advisory services.</li>
+            <li>Send invoices, confirmations, or administrative messages.</li>
+            <li>Share relevant fundraising insights, resources, and updates (if subscribed).</li>
+            <li>Improve our website, services, and user experience.</li>
+            <li>Comply with legal and regulatory obligations.</li>
+          </ul>
 
-        <h2 className="text-2xl font-semibold text-yellow-500">
-          4. Data Security
-        </h2>
-        <p>
-          We implement reasonable technical and organizational measures to protect your personal data from unauthorized access, disclosure, alteration, or destruction.
-        </p>
+          <h2 className="text-xl md:text-2xl font-semibold">4. Legal Basis for Processing (GDPR Compliance)</h2>
+          <ul className="list-disc ml-6">
+            <li>Consent: You have given clear consent for us to process your personal data.</li>
+            <li>Contract: Processing is necessary for performing a service agreement or contract.</li>
+            <li>Legal Obligation: We must process data to comply with applicable laws.</li>
+            <li>Legitimate Interest: Processing is necessary for our legitimate business interests.</li>
+          </ul>
 
-        <h2 className="text-2xl font-semibold text-yellow-500">
-          5. Third-Party Services
-        </h2>
-        <p>
-          We may share your data with trusted third-party service providers who perform services on our behalf, such as analytics, email delivery, and hosting. All third parties are required to maintain confidentiality and comply with privacy laws.
-        </p>
+          <h2 className="text-xl md:text-2xl font-semibold">5. Data Retention</h2>
+          <p>
+            We retain personal data only for as long as necessary to fulfill the purposes for which it was collected, including legal, accounting, or reporting requirements. 
+            When no longer needed, data is securely deleted or anonymized.
+          </p>
 
-        <h2 className="text-2xl font-semibold text-yellow-500">
-          6. Your Rights
-        </h2>
-        <p>
-          You have the right to access, correct, or delete your personal information. You may also object to certain processing of your data. To exercise these rights, please contact us at the email provided below.
-        </p>
+          <h2 className="text-xl md:text-2xl font-semibold">6. Information Sharing and Disclosure</h2>
+          <p>
+            We do not sell or rent personal data. We may share information only with trusted third-party service providers or legal authorities as required by law.
+          </p>
 
-        <h2 className="text-2xl font-semibold text-yellow-500">
-          7. Changes to This Policy
-        </h2>
-        <p>
-          We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.
-        </p>
+          <h2 className="text-xl md:text-2xl font-semibold">7. Data Security</h2>
+          <p>
+            We implement appropriate technical and organizational measures to protect your data from unauthorized access, alteration, or disclosure.
+          </p>
 
-        <h2 className="text-2xl font-semibold text-yellow-500">
-          8. Contact Us
-        </h2>
-        <p className="flex items-center gap-2">
-          <Mail size={20} />{" "}
-          <a
-            href="mailto:info@dynamicspaceconsulting.com"
-            className="text-yellow-500 hover:text-yellow-400"
-          >
-            info@dynamicspaceconsulting.com
-          </a>
-        </p>
-      </div>
+          <h2 className="text-xl md:text-2xl font-semibold">8. Cookies and Tracking Technologies</h2>
+          <p>
+            Our website may use cookies to enhance your browsing experience. You can modify your browser settings to disable cookies, but some features may not function properly.
+          </p>
+
+          <h2 className="text-xl md:text-2xl font-semibold">9. Your Data Protection Rights</h2>
+          <p>Depending on your location, you have the right to access, correct, delete, or restrict processing of your personal data. Contact us at info@dynamicspaceconsulting.com to exercise your rights.</p>
+
+          <h2 className="text-xl md:text-2xl font-semibold">10. International Data Transfers</h2>
+          <p>Your data may be processed or stored outside your country, with safeguards to comply with data protection laws.</p>
+
+          <h2 className="text-xl md:text-2xl font-semibold">11. Third-Party Links</h2>
+          <p>We are not responsible for the privacy practices or content of third-party websites. Please review their policies before sharing personal information.</p>
+
+          <h2 className="text-xl md:text-2xl font-semibold">12. Updates to This Policy</h2>
+          <p>We may revise this Privacy Policy from time to time. The updated version will be posted on this page with a new “Effective Date.”</p>
+
+          <h2 className="text-xl md:text-2xl font-semibold">13. Contact Us</h2>
+          <p>Email: info@dynamicspaceconsulting.com</p>
+          <p>Website: www.dynamicspaceconsulting.com</p>
+        </div>
+      </section>
 
       {/* Footer */}
       <Footer />
-    </div>
-  );
-}
-
-// Footer Component
-function Footer() {
-  return (
-    <footer className="relative bg-[#0A3D62] overflow-hidden">
-      <div className="relative z-10 pt-10 pb-2 px-8 md:px-18 2xl:px-40">
-        <div className="max-w-7xl mx-auto py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
-            
-            {/* Company Info */}
-            <div className="lg:col-span-3">
-              <div className="flex items-center gap-2 mb-6">
-                <Link href="/" className="flex items-center space-x-2">
-                  <Image
-                    src="/logo.svg"
-                    alt="Dynamic Space Consulting"
-                    className="h-12 md:h-16 w-auto"
-                    width={48}
-                    height={48}
-                  />
-                </Link>
-              </div>
-
-              <p className="text-[#FAFAFA] text-base font-semibold mb-6 md:max-w-[22rem] leading-relaxed">
-                We bridge the gap between bold ideas and sustainable growth,
-                equipping visionaries with the strategies, skills, and
-                connections required to secure funding and scale.
-              </p>
-
-              <Socials />
-
-              <div className="mt-6">
-                <p className="text-[#FAFAFA] text-sm font-semibold flex items-center">
-                  <Mail className="inline mr-2 font-bold" size={20} />{" "}
-                  <a
-                    href="mailto:info@dynamicspaceconsulting.com"
-                    className="text-[#FAFAFA] hover:text-yellow-500 transition-colors text-sm"
-                  >
-                    info@dynamicspaceconsulting.com
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h3 className="text-yellow-500 font-semibold text-lg mb-6">
-                Legal
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="/terms-and-conditions.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    Terms & Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/privacy-policy.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h3 className="text-yellow-500 font-semibold text-lg mb-6">
-                Resources
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    Blog Post
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/who-we-are"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact-us"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    Need Help?
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/pricing"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/meet-our-experts"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    Meet Our Experts
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h3 className="text-yellow-500 font-semibold text-lg mb-6">
-                Services
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="/what-we-do"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    Prospect Research
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/what-we-do"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    Grants & Sponsorships
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/what-we-do"
-                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
-                  >
-                    Fundraising Training
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-[#CAD4DC]">
-          <div className="max-w-7xl mx-auto px-6 py-6">
-            <p className="text-center text-[#FAFAFA] text-sm">
-              © Dynamic Space Consulting 2025. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    </>
   );
 }
