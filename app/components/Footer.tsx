@@ -17,7 +17,6 @@ export default function Footer() {
         const scrolled =
           window.scrollY - (section.offsetTop - window.innerHeight);
 
-        // Apply parallax only when section is visible
         if (rect.top < window.innerHeight && rect.bottom > 0) {
           bg.style.transform = `translateY(${scrolled * 0.3}px)`;
         }
@@ -45,7 +44,6 @@ export default function Footer() {
       />
 
       <div className="relative z-10 pt-10 pb-2 px-8 md:px-18 2xl:px-40">
-        {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
             
@@ -76,10 +74,8 @@ export default function Footer() {
                 </p>
               </div>
 
-              {/* Social Media Icons */}
               <Socials />
 
-              {/* Contact Info */}
               <div className="mt-6">
                 <p className="text-[#FAFAFA] text-sm font-semibold flex items-center">
                   <Mail className="inline mr-2 font-bold" size={20} />{" "}
@@ -98,24 +94,20 @@ export default function Footer() {
               <h3 className="text-yellow font-semibold text-lg mb-6">Legal</h3>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    href="/terms-and-conditions.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/terms-and-conditions"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Terms & Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/privacy-policy.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/privacy-policy"
                     className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -204,7 +196,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright Bar */}
         <div className="border-t border-[#CAD4DC]">
           <div className="max-w-7xl mx-auto px-6 py-6">
             <p className="text-center text-[#FAFAFA] text-sm">
