@@ -34,31 +34,35 @@ export default function ContactForm() {
 
   const onSubmit = (data: ContactFormInputs) => {
     setLoading(true);
-    fetch('/api/send-email', {
-      method: 'POST',
+    fetch("/api/send-email", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then(response => {
-      if (response.ok) {
-        reset();
-        toast.success('Message sent successfully!');
-      } else {
-        toast.error('Failed to send message.');
-      }
-    }).finally(() => {
-      setLoading(false);
-    });
+    })
+      .then((response) => {
+        if (response.ok) {
+          reset();
+          toast.success("Message sent successfully!");
+        } else {
+          toast.error("Failed to send message.");
+        }
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
     <div className="bg-[#CAD4DC] rounded-xl p-8 md:py-20 md:px-20 max-w-5xl mx-auto flex flex-col md:flex-row gap-8 shadow-sm my-20">
       {/* Left Section */}
       <div className="flex-1">
-        <h2 className="text-2xl font-bold text-primary mb-2">
+        {/* ✅ Updated color here */}
+        <h2 className="text-2xl font-bold mb-2" style={{ color: "#0A3D62" }}>
           Send Us A Message
         </h2>
+
         <p className="text-[#4A5568] mb-6">
           Have a bold idea? Need sustainable funding? We’d love to partner with
           you. Fill out the form or reach us directly, and let’s take the first
@@ -136,7 +140,7 @@ export default function ContactForm() {
           <input
             {...register("organization")}
             placeholder="Amazon"
-            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-noneplaceholder:font-normal placeholder:text-[#C6C6C7] placeholder:text-sm"
+            className="w-full border bg-white border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-yellow outline-none placeholder:font-normal placeholder:text-[#C6C6C7] placeholder:text-sm"
           />
         </div>
 
@@ -168,11 +172,8 @@ export default function ContactForm() {
           )}
         </div>
 
-        <Button
-          type="submit"
-          className="w-full"
-        >
-         {loading ? "Sending..." : "Send Message"}
+        <Button type="submit" className="w-full">
+          {loading ? "Sending..." : "Send Message"}
         </Button>
       </form>
     </div>
