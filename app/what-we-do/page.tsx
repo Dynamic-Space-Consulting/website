@@ -19,7 +19,7 @@ export default function WhatWeDo() {
         <h3 className="text-4xl font-bold font-sans-pro text-[#0A3D62]">
           Our Services
         </h3>
-        <p className="text-lg font-normal font-inter text-[#4A5568] max-w-6xl">
+        <p className="text-lg font-normal font-inter text-[#0A3D62] max-w-6xl">
           At Dynamic Space Consulting (DSC), we provide research-driven
           fundraising solutions that help startups, nonprofits, and social
           enterprises unlock the capital they need to grow and scale
