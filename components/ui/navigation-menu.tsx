@@ -1,62 +1,68 @@
-import * as React from "react"
-import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
-import { cva } from "class-variance-authority"
-import { ChevronDownIcon } from "lucide-react"
+// components/ui/navigation-menu.tsx
+import * as React from "react";
+import { cva } from "class-variance-authority";
+import { cn } from "@/lib/utils"; // Your utility for merging classNames
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "./ui/navigation-menu-components"; // Adjust import paths
 
-import { cn } from "@/lib/utils"
+// Base trigger style using CVA
+export const navigationMenuTriggerStyle = cva(
+  "group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      intent: {
+        default: "text-yellow-400 hover:text-green-500 hover:bg-transparent",
+        contact: "text-yellow-400 hover:text-green-500 hover:bg-transparent",
+      },
+    },
+    defaultVariants: {
+      intent: "default",
+    },
+  }
+);
 
-function NavigationMenu({
-  className,
-  children,
-  viewport = true,
-  ...props
-}: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {
-  viewport?: boolean
-}) {
-  return (
-    <NavigationMenuPrimitive.Root
-      data-slot="navigation-menu"
-      data-viewport={viewport}
-      className={cn(
-        "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      {viewport && <NavigationMenuViewport />}
-    </NavigationMenuPrimitive.Root>
-  )
+interface NavigationMenuTriggerProps extends React.ComponentProps<typeof NavigationMenuTrigger> {
+  intent?: "default" | "contact";
 }
 
-function NavigationMenuList({
-  className,
-  ...props
-}: React.ComponentProps<typeof NavigationMenuPrimitive.List>) {
-  return (
-    <NavigationMenuPrimitive.List
-      data-slot="navigation-menu-list"
-      className={cn(
-        "group flex flex-1 list-none items-center justify-center gap-1",
-        className
-      )}
-      {...props}
-    />
-  )
-}
+export const NavigationMenuTriggerButton = React.forwardRef<
+  HTMLButtonElement,
+  NavigationMenuTriggerProps
+>(({ className, intent, ...props }, ref) => (
+  <NavigationMenuTrigger
+    ref={ref}
+    className={cn(navigationMenuTriggerStyle({ intent }), className)}
+    {...props}
+  />
+));
+NavigationMenuTriggerButton.displayName = "NavigationMenuTriggerButton";
 
-function NavigationMenuItem({
-  className,
-  ...props
-}: React.ComponentProps<typeof NavigationMenuPrimitive.Item>) {
+// Example menu structure
+export function MainNavigation() {
   return (
-    <NavigationMenuPrimitive.Item
-      data-slot="navigation-menu-item"
-      className={cn("relative", className)}
-      {...props}
-    />
-  )
-}
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTriggerButton>Home</NavigationMenuTriggerButton>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTriggerButton>Features</NavigationMenuTriggerButton>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTriggerButton intent="contact">Contact</NavigationMenuTriggerButton>
+        </NavigationMenuItem>
+      </NavigationMenuList>
 
-const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium hover:bg-transparent hover:text-yellow-400 focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:text-yellow-400 focus-visible:ring-ring
+      {/* Add dropdown contents if needed */}
+      <NavigationMenuContent>
+        <NavigationMenuLink href="/contact">Get in touch</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenu>
+  );
+}
