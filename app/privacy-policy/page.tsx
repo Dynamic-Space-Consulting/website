@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
       {/* Hero Section */}
       <div className="relative w-full h-64 md:h-96 bg-gray-900">
         <Image
-          src="/privacy-hero.png" // replace with your uploaded image
+          src="/privacy-policy.png" // replace with your uploaded image
           alt="Privacy Policy Hero"
           fill
           className="object-cover"
