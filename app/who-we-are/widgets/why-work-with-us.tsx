@@ -82,7 +82,8 @@ export default function WhyWorkWithUs() {
   return (
     <section className="w-full bg-[#CAD4DC] py-16">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold font-sans-pro text-[#0A3D62] mb-10">
+        {/* ✅ Primary color applied */}
+        <h2 className="text-3xl md:text-4xl font-bold font-sans-pro mb-10" style={{ color: "#0A3D62" }}>
           Why Work With Us
         </h2>
 
@@ -95,7 +96,8 @@ export default function WhyWorkWithUs() {
               key={index}
               className="flex flex-col items-center md:border-r-2 md:border-[#A0AEC0] md:last:border-r-0"
             >
-              <p className="text-3xl font-bold text-[#1A202C]">
+              {/* ✅ Stat Number in Primary Color */}
+              <p className="text-3xl font-bold" style={{ color: "#0A3D62" }}>
                 {start ? (
                   <CountUp
                     end={stat.end}
@@ -108,7 +110,9 @@ export default function WhyWorkWithUs() {
                   0
                 )}
               </p>
-              <p className="text-sm md:text-base text-[#545556]">
+
+              {/* ✅ Label in Primary Color */}
+              <p className="text-sm md:text-base font-medium" style={{ color: "#0A3D62" }}>
                 {stat.label}
               </p>
             </div>
