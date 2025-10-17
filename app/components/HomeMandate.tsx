@@ -27,7 +27,7 @@ export default function HomeMandate() {
             is a global fundraising consultancy firm dedicated
             to empower nonprofits, startups, and social enterprises 
             in Canada, the US, UK, Australia, and Nigeria
-            with the resources they need to thrive..
+            with the resources they need to thrive.
           </p>
 
           <p className="font-normal text-base md:text-lg text-[#1A202C] leading-relaxed">
