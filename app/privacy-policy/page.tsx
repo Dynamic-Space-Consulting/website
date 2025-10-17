@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { Navbar } from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -140,7 +139,7 @@ export default function PrivacyPolicy() {
         </p>
         <ul className="list-disc ml-6">
           <li>Email: <a href="mailto:info@dynamicspaceconsulting.com" className="text-blue-600 underline">info@dynamicspaceconsulting.com</a></li>
-          <li>Website: <a href="https://www.dynamicspaceconsulting.com" className="text-blue-600 underline">www.dynamicspaceconsulting.com</a></li>
+          <li>Website: <a href="/privacy-policy" className="text-blue-600 underline">Privacy Policy Page</a></li>
         </ul>
       </section>
 
