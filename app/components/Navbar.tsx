@@ -44,7 +44,37 @@ export function Navbar() {
         <NavigationMenu className="hidden lg:flex" viewport={false}>
           <NavigationMenuList className="space-x-8">
             {navLinks.map((link, index) => {
-              if (index === 2) {
+              if (index === 1) {
+                // Who We Are dropdown
+                return (
+                  <NavigationMenuItem key={link.href}>
+                    <NavigationMenuTrigger
+                      className={cn(
+                        "text-sm font-semibold transition-colors hover:text-yellow-400 bg-transparent focus:bg-transparent !data-[state=open]:bg-transparent !data-[state=open]:hover:bg-transparent !data-[state=open]:hover:text-current !data-[state=open]:focus:bg-transparent",
+                        pathname === link.href ? "text-yellow" : "text-gray-100"
+                      )}
+                      onClick={() => router.push(link.href)}
+                    >
+                      {link.label}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="mt-10 !bg-[#0A3D62] !border-none flex flex-col gap-2 p-4 !w-[200px]">
+                      <Link
+                        href="/who-we-are"
+                        className="text-sm text-[#FAFAFA] hover:text-yellow font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left"
+                      >
+                        About Us
+                      </Link>
+                      <Link
+                        href="/meet-our-experts"
+                        className="text-sm text-[#FAFAFA] hover:text-yellow font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left"
+                      >
+                        Meet Our Experts
+                      </Link>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                );
+              } else if (index === 2) {
+                // What We Do dropdown (existing)
                 return (
                   <NavigationMenuItem key={link.href}>
                     <NavigationMenuTrigger
@@ -71,7 +101,7 @@ export function Navbar() {
                       </Link>
                       <Link
                         href={link.href}
-                        className="text-sm text-[#FAFAFA] hover:text-yellow  font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left"
+                        className="text-sm text-[#FAFAFA] hover:text-yellow font-inter hover:scale-110 transition-transform duration-200 origin-bottom-left"
                       >
                         Fundraising Training
                       </Link>
@@ -79,6 +109,7 @@ export function Navbar() {
                   </NavigationMenuItem>
                 );
               } else {
+                // Normal links
                 return (
                   <NavigationMenuItem key={link.href}>
                     <NavigationMenuLink asChild>
@@ -118,7 +149,30 @@ export function Navbar() {
             <div className="flex flex-col space-y-6 mt-6">
               {navLinks.map((link, index) => (
                 <div key={link.href}>
-                  {index === 2 ? (
+                  {index === 1 ? (
+                    <div>
+                      <div
+                        className="text-lg font-semibold text-gray-100 mb-3"
+                        onClick={() => router.push(link.href)}
+                      >
+                        {link.label}
+                      </div>
+                      <div className="ml-4 space-y-3">
+                        <Link
+                          href="/who-we-are"
+                          className="block text-sm text-[#FAFAFA] hover:text-yellow font-inter transition-colors"
+                        >
+                          About Us
+                        </Link>
+                        <Link
+                          href="/meet-our-experts"
+                          className="block text-sm text-[#FAFAFA] hover:text-yellow font-inter transition-colors"
+                        >
+                          Meet Our Experts
+                        </Link>
+                      </div>
+                    </div>
+                  ) : index === 2 ? (
                     <div>
                       <div
                         className="text-lg font-semibold text-gray-100 mb-3"
