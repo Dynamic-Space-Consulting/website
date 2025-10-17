@@ -214,10 +214,11 @@ export function Navbar() {
                   )}
                 </div>
               ))}
+              {/* Mobile CTA Button */}
               <div className="pt-6 border-t border-gray-700">
                 <Button
                   asChild
-                  className="w-full bg-yellow hover:bg-yellow-600 text-primary font-semibold"
+                  className="w-full bg-[#FAB443] text-[#0A3D62] font-semibold hover:bg-[#0A3D62] hover:text-[#FAB443] transition-colors"
                 >
                   <Link href="/contact-us">Contact Us</Link>
                 </Button>
@@ -226,10 +227,10 @@ export function Navbar() {
           </SheetContent>
         </Sheet>
 
-        {/* Desktop Contact Button */}
+        {/* Desktop CTA Button */}
         <Button
           asChild
-          className="hidden lg:inline-flex bg-yellow hover:bg-yellow-600 text-primary font-semibold"
+          className="hidden lg:inline-flex bg-[#FAB443] text-[#0A3D62] font-semibold hover:bg-[#0A3D62] hover:text-[#FAB443] transition-colors"
         >
           <Link href="/contact-us">Contact Us</Link>
         </Button>
