@@ -93,6 +93,33 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* Legal Column */}
+            <div>
+              <h3 className="text-yellow font-semibold text-lg mb-6">Legal</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="/terms-and-conditions.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
+                  >
+                    Terms & Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/privacy-policy.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#FAFAFA] font-semibold hover:text-yellow-500 transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+              </ul>
+            </div>
+
             {/* Resources Column */}
             <div>
               <h3 className="text-yellow-500 font-semibold text-lg mb-6">
