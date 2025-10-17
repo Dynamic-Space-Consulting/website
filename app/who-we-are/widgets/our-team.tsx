@@ -156,7 +156,7 @@ export default function OurTeam() {
       <div className="text-center mt-12">
         <Button
           asChild
-          className="px-8 py-4 text-base font-semibold bg-[#0A3D62] hover:bg-[#092b44] text-white rounded-lg transition-colors"
+          className="px-8 py-4 text-#0A3D62 font-semibold bg-[#FAB443] hover:bg-[#0A3D62] text-white rounded-lg transition-colors"
         >
           <Link href="/meet-our-experts">Learn More</Link>
         </Button>
