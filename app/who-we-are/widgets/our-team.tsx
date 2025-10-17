@@ -86,7 +86,7 @@ export default function OurTeam() {
             <p className="font-normal text-base md:text-lg text-[#545556]">
               John is a certified grant writer and experienced fundraising
               consultant with over seven years of experience helping
-              organizations build strong  funding pipelines...
+              organizations build strong funding pipelines...
             </p>
             <Link
               href="https://www.linkedin.com/in/johnjames111"
@@ -138,7 +138,7 @@ export default function OurTeam() {
             <p className="font-normal text-base md:text-lg text-[#545556]">
               Damilola has over six years of experience in international grant
               writing and fundraising. She has helped nonprofits and social
-              enterprises secure  vital funding...
+              enterprises secure vital funding...
             </p>
             <Link
               href="https://www.linkedin.com/in/damilola-oluwafemi-a6b898129"
@@ -156,7 +156,7 @@ export default function OurTeam() {
       <div className="text-center mt-12">
         <Button
           asChild
-          className="px-8 py-4 text-#0A3D62 font-semibold bg-[#FAB443] hover:bg-[#0A3D62] text-white rounded-lg transition-colors"
+          className="px-8 py-4 text-base font-semibold bg-[#FAB443] hover:bg-[#0A3D62] hover:text-white text-[#0A3D62] rounded-lg transition-colors"
         >
           <Link href="/meet-our-experts">Learn More</Link>
         </Button>
