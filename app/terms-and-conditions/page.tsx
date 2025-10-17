@@ -9,7 +9,7 @@ export default function TermsAndConditions() {
       {/* Hero Section */}
       <div className="relative w-full h-64 md:h-96 bg-gray-900">
         <Image
-          src="/terms-and-conditions.png" // replace with your uploaded image
+          src="/terms-hero.png" // replace with your uploaded image
           alt="Terms and Conditions Hero"
           fill
           className="object-cover"
