@@ -8,30 +8,31 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // 🔹 Default (Primary Button)
+        // 🔹 Primary Button (Default)
         default:
-          "bg-yellow text-[#0A3D62] hover:bg-[#0A3D62] hover:text-[#FAB443] font-semibold focus-visible:ring-yellow/20",
+          "bg-[#FAB443] text-[#0A3D62] hover:bg-[#0A3D62] hover:text-[#FAB443] font-semibold focus-visible:ring-yellow/20",
 
-        // 🔹 Destructive (for warnings/errors)
+        // 🔹 Destructive (For warning/error)
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
 
-        // 🔹 Outline Button (Yellow border style)
-        outline:
-          "bg-transparent text-[#0A3D62] border border-yellow hover:bg-[#0A3D62] hover:text-[#FAB443] font-semibold focus-visible:ring-yellow/20",
-
-        // 🔹 Secondary Button (if used)
+        // 🔹 Secondary Button (Outlined Yellow)
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "bg-transparent text-[#FAB443] border border-[#FAB443] hover:bg-[#0A3D62] hover:text-[#FAB443] font-semibold focus-visible:ring-yellow/20",
 
-        // 🔹 Ghost (transparent)
+        // 🔹 Outline (Alternate outline if needed)
+        outline:
+          "bg-transparent text-[#FAB443] border border-[#FAB443] hover:bg-[#0A3D62] hover:text-[#FAB443] font-semibold focus-visible:ring-yellow/20",
+
+        // 🔹 Ghost (minimal button)
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
 
-        // 🔹 Link (Text Button)
+        // 🔹 Link (inline link-style)
         link:
           "text-primary underline-offset-4 hover:underline hover:scale-[1.02]",
       },
+
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
@@ -41,6 +42,7 @@ const buttonVariants = cva(
         "icon-lg": "size-10",
       },
     },
+
     defaultVariants: {
       variant: "default",
       size: "default",
