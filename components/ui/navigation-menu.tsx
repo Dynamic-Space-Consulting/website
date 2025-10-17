@@ -137,6 +137,19 @@ function NavigationMenuLink({
   )
 }
 
+// ---------- CONTACT US CTA LINK ----------
+export function ContactUsCTA() {
+  return (
+    <NavigationMenuLink
+      href="/contact"
+      className="bg-[#FAB443] text-[#0A3D62] hover:bg-[#0A3D62] hover:text-[#FAB443] px-6 py-2 rounded-md font-medium transition-colors"
+    >
+      Contact Us
+    </NavigationMenuLink>
+  )
+}
+// --------------------------------------
+
 function NavigationMenuIndicator({
   className,
   ...props
@@ -165,4 +178,5 @@ export {
   NavigationMenuIndicator,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
+  ContactUsCTA,
 }
