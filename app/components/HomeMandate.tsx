@@ -24,9 +24,10 @@ export default function HomeMandate() {
             <span className="font-semibold text-[#0A3D62] text-lg">
               Dynamic Space Consulting (DSC)
             </span>{" "}
-            is a global fundraising consultancy firm dedicated to empowering
-            nonprofits, startups, and social enterprises with the resources they
-            need to thrive.
+            is a global fundraising consultancy firm dedicated
+            to empower nonprofits, startups, and social enterprises 
+            in Canada, the US, UK, Australia, and Nigeria
+            with the resources they need to thrive..
           </p>
 
           <p className="font-normal text-base md:text-lg text-[#1A202C] leading-relaxed">
