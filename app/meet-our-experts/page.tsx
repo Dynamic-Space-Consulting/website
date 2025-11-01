@@ -347,11 +347,6 @@ export default function MeetOurExperts() {
                 includes concept notes, RFP responses, and full proposals focused on
                 community development.
               </p>
-
-              <p className="font-normal text-base md:text-lg text-[#545556]">
-                My goal is to support startups and nonprofits with robust and actionable plans
-                in the US, UK, Canada, and Africa that drive growth, sustainability, and measurable impact.
-              </p>
             </div>
           </section>
         </div>
