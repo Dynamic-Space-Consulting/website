@@ -290,6 +290,51 @@ export default function MeetOurExperts() {
                 to achieve impactful and sustainable project outcomes.
               </p>
             </div>
+
+            {/* Member 5 - Aneel Shahzad */}
+        <div className="md:my-12 max-w-6xl mx-auto px-6 md:px-20 pt-10">
+          <section
+            ref={section4Ref}
+            className="flex flex-col md:flex-row-reverse items-center justify-between gap-20 p-8 md:p-0"
+          >
+            <div
+              className={`relative w-full md:w-[45%] transition-all duration-900 ease-out transform ${
+                image4Visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+              }`}
+            >
+              <div className="absolute bottom-2 left-3 w-[80%] h-[83%] bg-[#0A3D62] rounded-lg"></div>
+              <Image
+                src="/team_member_five.png"
+                alt="Aneel Shahzad"
+                className="relative rounded-lg z-10 w-full max-w-md object-cover"
+                width={400}
+                height={300}
+              />
+            </div>
+
+            <div
+              className={`w-full md:w-[45%] space-y-2 transition-all duration-900 ease-out transform ${
+                text4Visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+              }`}
+            >
+              <h3 className="font-semibold text-[#0A3D62] text-xl md:text-2xl">
+                Aneel Shahzad - Grant Writer Specialist
+              </h3>
+
+              <p className="font-normal text-base md:text-lg text-[#545556]">
+                I am a Grant Writer Specialist offering nonprofit proposal writing,
+                RFP bid proposal development, and one-to-one coaching and training
+                for individuals, startups, incubators, accelerators, and organizations
+                to enhance their proposal writing capabilities.
+              </p>
+
+              <p className="font-normal text-base md:text-lg text-[#545556]">
+               I have completed grant applications resulting in over $10 million USD
+                in successful proposals across the US, UK, and other regions. My expertise
+                includes concept notes, RFP responses, and full proposals focused on
+                community development.
+              </p>
+            </div>
           </section>
         </div>
       </section>
