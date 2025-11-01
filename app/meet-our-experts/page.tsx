@@ -277,15 +277,17 @@ export default function MeetOurExperts() {
               </h3>
 
               <p className="font-normal text-base md:text-lg text-[#545556]">
-                Education: BSc Mechanical Engineering (Pakistan), MSc Project Management (UK, 2010),
-                and PhD Engineering Management (Italy, 2020).
+                Ijaz has an educational background in Project Management and 
+                Engineering, with over five years of grant writing experience 
+                spanning environmental, educational, engineering, and vocational 
+                training projects. He has successfully secured grants for The 
+                Able Plus Research Center and multiple clients in the development sector.
               </p>
 
               <p className="font-normal text-base md:text-lg text-[#545556]">
-                Dr. Ijaz has more than 5 years of grant writing experience across Environmental,
-                Educational, Engineering, and Vocational Training projects. He has won grants for
-                The Able Plus Research Center and for clients in the development sector and currently
-                leads a team of grant writers supporting NGOs, private sector clients, and educational institutions.
+               He currently leads a team of grant writers, developing compelling 
+                proposals for NGOs, private organizations, and educational institutions 
+                to achieve impactful and sustainable project outcomes.
               </p>
             </div>
           </section>
