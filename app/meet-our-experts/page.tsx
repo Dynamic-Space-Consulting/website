@@ -351,8 +351,6 @@ export default function MeetOurExperts() {
               <p className="font-normal text-base md:text-lg text-[#545556]">
                 My goal is to support startups and nonprofits with robust and actionable plans
                 in the US, UK, Canada, and Africa that drive growth, sustainability, and measurable impact.
-                Currently, I work as a freelance grant writer, providing professional training to both local and
-                international clients in grant writing, fundraising strategy, and monitoring & evaluation for community development programs.
               </p>
             </div>
           </section>
