@@ -11,15 +11,22 @@ export default function MeetOurExperts() {
   const section2Ref = useRef<HTMLElement | null>(null);
   const section3Ref = useRef<HTMLElement | null>(null);
   const section4Ref = useRef<HTMLElement | null>(null);
+  const section5Ref = useRef<HTMLElement | null>(null);
 
   const [textVisible, setTextVisible] = useState(false);
   const [imageVisible, setImageVisible] = useState(false);
+
   const [text2Visible, setText2Visible] = useState(false);
   const [image2Visible, setImage2Visible] = useState(false);
+
   const [text3Visible, setText3Visible] = useState(false);
   const [image3Visible, setImage3Visible] = useState(false);
+
   const [text4Visible, setText4Visible] = useState(false);
   const [image4Visible, setImage4Visible] = useState(false);
+
+  const [text5Visible, setText5Visible] = useState(false);
+  const [image5Visible, setImage5Visible] = useState(false);
 
   useEffect(() => {
     const opts: IntersectionObserverInit = { threshold: 0.2 };
@@ -38,6 +45,9 @@ export default function MeetOurExperts() {
           } else if (e.target === section4Ref.current) {
             setText4Visible(true);
             setTimeout(() => setImage4Visible(true), 400);
+          } else if (e.target === section5Ref.current) {
+            setText5Visible(true);
+            setTimeout(() => setImage5Visible(true), 400);
           }
           observer.unobserve(e.target);
         }
@@ -48,6 +58,7 @@ export default function MeetOurExperts() {
     if (section2Ref.current) observer.observe(section2Ref.current);
     if (section3Ref.current) observer.observe(section3Ref.current);
     if (section4Ref.current) observer.observe(section4Ref.current);
+    if (section5Ref.current) observer.observe(section5Ref.current);
 
     return () => observer.disconnect();
   }, []);
@@ -287,22 +298,24 @@ export default function MeetOurExperts() {
               <p className="font-normal text-base md:text-lg text-[#545556]">
                He currently leads a team of grant writers, developing compelling 
                 proposals for NGOs, private organizations, and educational institutions 
-                to achieve impactful and sustainable project outcomes.
+                to achieve impactful and sustainable project outcomes.
               </p>
             </div>
+          </section>
+        </div>
 
-            {/* Member 5 - Aneel Shahzad */}
-        <div className="md:my-12 max-w-6xl mx-auto px-6 md:px-20 pt-10">
+        {/* Member 5 - Aneel Shahzad */}
+        <div className="md:my-12 max-w-6xl mx-auto px-6 md:px-10">
           <section
-            ref={section4Ref}
-            className="flex flex-col md:flex-row-reverse items-center justify-between gap-20 p-8 md:p-0"
+            ref={section5Ref}
+            className="flex flex-col md:flex-row items-center justify-between md:space-x-20 gap-10 md:my-16 p-8 md:p-0"
           >
             <div
-              className={`relative w-full md:w-[45%] transition-all duration-900 ease-out transform ${
-                image4Visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+              className={`relative w-full md:w-1/2 flex justify-end transition-all duration-900 ease-out transform ${
+                image5Visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               }`}
             >
-              <div className="absolute bottom-2 left-3 w-[80%] h-[83%] bg-[#0A3D62] rounded-lg"></div>
+              <div className="absolute bottom-2 right-3 w-[80%] h-[83%] bg-[#0A3D62] rounded-lg"></div>
               <Image
                 src="/team_member_five.png"
                 alt="Aneel Shahzad"
@@ -313,8 +326,8 @@ export default function MeetOurExperts() {
             </div>
 
             <div
-              className={`w-full md:w-[45%] space-y-2 transition-all duration-900 ease-out transform ${
-                text4Visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+              className={`w-full md:w-1/2 space-y-2 md:px-4 transition-all duration-900 ease-out transform ${
+                text5Visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
               }`}
             >
               <h3 className="font-semibold text-[#0A3D62] text-xl md:text-2xl">
@@ -329,10 +342,17 @@ export default function MeetOurExperts() {
               </p>
 
               <p className="font-normal text-base md:text-lg text-[#545556]">
-               I have completed grant applications resulting in over $10 million USD
+                I have completed grant applications resulting in over $10 million USD
                 in successful proposals across the US, UK, and other regions. My expertise
                 includes concept notes, RFP responses, and full proposals focused on
                 community development.
+              </p>
+
+              <p className="font-normal text-base md:text-lg text-[#545556]">
+                My goal is to support startups and nonprofits with robust and actionable plans
+                in the US, UK, Canada, and Africa that drive growth, sustainability, and measurable impact.
+                Currently, I work as a freelance grant writer, providing professional training to both local and
+                international clients in grant writing, fundraising strategy, and monitoring & evaluation for community development programs.
               </p>
             </div>
           </section>
