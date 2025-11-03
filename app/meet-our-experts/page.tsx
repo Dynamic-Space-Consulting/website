@@ -341,15 +341,6 @@ export default function MeetOurExperts() {
                 and organizations. His expertise includes crafting successful grant 
                 applications, securing over $10 million USD in funding.
               </p>
-
-              <p className="font-normal text-base md:text-lg text-[#545556]">
-                Aneel specializes in grant writing training, fundraising strategy, 
-                and monitoring & evaluation for community development programs across 
-                the nonprofit, business, and government sectors in the US, UK, Canada, 
-                and Africa. He also has expertise in Technical and Project Management 
-                Writing, providing comprehensive support to organizations in their 
-                pursuit of funding and impactful projects.
-              </p>
             </div>
           </section>
         </div>
