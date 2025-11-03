@@ -348,7 +348,7 @@ export default function MeetOurExperts() {
                 the nonprofit, business, and government sectors in the US, UK, Canada, 
                 and Africa. He also has expertise in Technical and Project Management 
                 Writing, providing comprehensive support to organizations in their 
-                pursuit of funding and impactful projects..
+                pursuit of funding and impactful projects.
               </p>
             </div>
           </section>
