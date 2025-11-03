@@ -335,17 +335,20 @@ export default function MeetOurExperts() {
               </h3>
 
               <p className="font-normal text-base md:text-lg text-[#545556]">
-                I am a Grant Writer Specialist offering nonprofit proposal writing,
-                RFP bid proposal development, and one-to-one coaching and training
-                for individuals, startups, incubators, accelerators, and organizations
-                to enhance their proposal writing capabilities.
+                Aneel is a seasoned Grants Specialist with over 10 years of experience 
+                in nonprofit proposal writing, RFP bid proposal development, and 
+                personalized coaching and training for startups, incubators, accelerators, 
+                and organizations. His expertise includes crafting successful grant 
+                applications, securing over $10 million USD in funding.
               </p>
 
               <p className="font-normal text-base md:text-lg text-[#545556]">
-                I have completed grant applications resulting in over $10 million USD
-                in successful proposals across the US, UK, and other regions. My expertise
-                includes concept notes, RFP responses, and full proposals focused on
-                community development.
+                Aneel specializes in grant writing training, fundraising strategy, 
+                and monitoring & evaluation for community development programs across 
+                the nonprofit, business, and government sectors in the US, UK, Canada, 
+                and Africa. He also has expertise in Technical and Project Management 
+                Writing, providing comprehensive support to organizations in their 
+                pursuit of funding and impactful projects..
               </p>
             </div>
           </section>
