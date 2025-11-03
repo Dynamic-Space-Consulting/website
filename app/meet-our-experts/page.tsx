@@ -335,11 +335,11 @@ export default function MeetOurExperts() {
               </h3>
 
               <p className="font-normal text-base md:text-lg text-[#545556]">
-                Aneel is a seasoned Grants Specialist with over 10 years of experience 
-                in nonprofit proposal writing, RFP bid proposal development, and 
-                personalized coaching and training for startups, incubators, accelerators, 
-                and organizations. His expertise includes crafting successful grant 
-                applications, securing over $10 million USD in funding.
+                Aneel is a seasoned Grant Specialist with over 10 years of experience in 
+                nonprofit proposal writing, RFP bid proposal development, and personalized 
+                coaching and training for startups, incubators, accelerators, 
+                and organizations. His expertise includes crafting successful grant applications, 
+                securing over $10 million USD in funding.
               </p>
             </div>
           </section>
